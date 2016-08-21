@@ -1,0 +1,88 @@
+.checkout-thanks-view
+{
+	background-color: $checkout-thanks-bg;
+
+	.checkout-thanks-header
+	{
+		background-color: $checkout-thanks-header-bg !important;
+		background: $checkout-thanks-header-bg !important;
+		border: none !important;
+		background-size: 0px !important; // To remove bottom border on header
+
+		.title
+		{
+			color: $checkout-thanks-header-color;
+			font-weight: 300;
+		}
+	}
+
+	.checkout-thanks-content
+	{
+		padding: 0px;
+		margin: 0px;
+
+		& > .scroll
+		{
+			height: 100%;
+		}
+	}
+
+	.thanks-row
+	{
+		height: 100%;
+		text-align: center;
+
+		&.row
+		{
+			padding: 0px;
+
+			.col
+			{
+				padding: 0px;
+			}
+		}
+
+		.thanks-title
+		{
+			font-weight: 300;
+			color: $checkout-thanks-title-color;
+			margin: 0px 0px 50px;
+			padding: 0px 13%;
+			padding-top: 10px;
+		}
+
+		.illustration-container
+		{
+			margin: 0px 19%;
+			margin-bottom: 70px;
+
+			.pre-img
+			{
+				background-color: rgba($checkout-thanks-bg, 0);
+			}
+
+			.illustration-image
+	    {
+	      width: 100%;
+	    }
+		}
+	}
+
+	.ok-button-outer
+	{
+		padding: 0 19%;
+
+		.ok-button
+		{
+			margin: 0px;
+			margin-top: 15px;
+			height: $checkout-thanks-button-height;
+			text-transform: uppercase;
+			line-height: $checkout-thanks-button-height - 5px;
+			font-size: 22px;
+			border-radius: $checkout-thanks-button-height/2;
+
+			@include button-style($checkout-thanks-button-bg, $checkout-thanks-button-border, $checkout-thanks-button-active-bg, $checkout-thanks-button-active-border, $checkout-thanks-button-text);
+		}
+	}
+}

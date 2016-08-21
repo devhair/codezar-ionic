@@ -1,0 +1,162 @@
+@mixin addresses-popover-dynamic-height($item-height){
+  $max-visible-items: 6;
+
+  @for $i from 1 through $max-visible-items{
+    &.contains-#{$i}-items
+    {
+      height: $item-height * $i;
+    }
+  }
+
+  &.contains-more-than-6-items
+  {
+    height: $item-height * $max-visible-items;
+  }
+};
+@mixin cards-popover-dynamic-height($item-height){
+  $max-visible-items: 6;
+
+  @for $i from 1 through $max-visible-items{
+    &.contains-#{$i}-items
+    {
+      height: $item-height * $i;
+    }
+  }
+
+  &.contains-more-than-5-items
+  {
+    height: $item-height * $max-visible-items;
+  }
+};
+
+@function calculate-slide-shadow($slider-filter-line-active-bg, $slider-filter-thumb-size){
+  $start: -($slider-filter-thumb-size/2);
+  $active-slide-range-height: -9px;
+  $max-active-slide-range: -300px;
+  $shadows-effect: ();
+
+  @while $start > $max-active-slide-range{
+    $other-shadow-effect: #{$start} 1px 0px #{$active-slide-range-height} #{$slider-filter-line-active-bg};
+    $shadows-effect: append($shadows-effect, $other-shadow-effect, comma);
+    $start: $start + ($active-slide-range-height/4);
+  }
+
+  @return $shadows-effect;
+};
+
+@mixin popup-header-style($bg-color, $state-class) {
+  @at-root .#{$state-class}{
+    .popup-head
+    {
+      background-color: $bg-color;
+    }
+
+    .popup-buttons
+    {
+      .close-popup
+      {
+        background-color: $bg-color !important;
+      }
+    }
+  }
+};
+
+@mixin sort-options-style($color, $state-class) {
+  @at-root .#{$state-class}{
+    .item
+    {
+      border-color: lighten($color, 18%) !important;
+    }
+
+    .radio-icon
+    {
+      color: $color !important;
+    }
+  }
+};
+
+@mixin filter-gradient($start-color, $end-color, $orientation: vertical) {
+  $gradient-type: if($orientation == vertical, 0, 1);
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=#{$gradient-type}, startColorstr='#{ie-hex-str($start-color)}', endColorstr='#{ie-hex-str($end-color)}');
+};
+
+@mixin spinner-size($size, $svg-size){
+  .spinner-on-load
+  {
+    position: absolute;
+  	font-size: $size;
+  	width: $size;
+  	height: $size;
+  	line-height: $size;
+    @include animation(spin 2s infinite linear);
+  	@include calc(top, "50% - #{($size/2)}");
+  	@include calc(left, "50% - #{($size/2)}");
+  }
+  ion-spinner.spinner-on-load
+  {
+    @include animation(none);
+  	width: $svg-size;
+    height: $svg-size;
+    line-height: inherit;
+  	@include calc(top, "50% - #{($svg-size/2)}");
+  	@include calc(left, "50% - #{($svg-size/2)}");
+
+    &.spinner svg
+    {
+      width: $svg-size;
+      height: $svg-size;
+    }
+  }
+};
+@mixin spinner-color($color){
+  .spinner-on-load
+  {
+    color: $color;
+  }
+  ion-spinner.spinner-on-load
+  {
+    stroke: $color;
+  }
+};
+
+@mixin headings($from: 1, $to: 6){
+  @for $i from $from through $to{
+    h#{$i}{
+      @content
+    }
+  }
+};
+
+@mixin transition($transitions...)
+{
+  -webkit-transition: $transitions;
+  -moz-transition: $transitions;
+  -ms-transition: $transitions;
+  -o-transition: $transitions;
+  transition: $transitions;
+};
+
+// Placeholder shadow DOM
+// We use '_' to avoid conflicts with ionic 'placeholder' mixin
+@mixin _placeholder {
+  $placeholders: ":-webkit-input" ":-moz" "-moz" "-ms-input";
+  @each $placeholder in $placeholders {
+    &:#{$placeholder}-placeholder {
+      @content;
+    }
+  }
+};
+
+@mixin box-shadow($val)
+{
+  -webkit-box-shadow: $val;
+  -moz-box-shadow: $val;
+  box-shadow: $val;
+};
+
+@mixin opacity($opacity)
+{
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+};

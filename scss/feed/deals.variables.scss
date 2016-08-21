@@ -1,0 +1,24 @@
+$deals-view-bg: #faf2f0;
+$deals-product-top-row-height: 50px;
+$deals-product-top-row-margin: 2px;
+$deals-product-top-padding: 8px;
+$deals-product-color: #4D301C;
+$deals-product-description-alternative-color: #a48d80;
+$deals-product-shop-button-height: $deals-product-top-row-height - (2*$deals-product-top-padding) - $deals-product-top-row-margin;
+
+$deals-bookmark-button-color: #9ae89a;
+
+$deals-code-color: #9ae89a;
+$deals-code-border: 2px;
+$deals-code-inner-height: 28px;
+$deals-code-height: $deals-code-inner-height + (2*$deals-code-border);
+$deals-code-padding: 8px;
+$deals-time-left-color: #a48d80;
+$deals-time-left-1d-color: #ffab6b;
+$deals-time-left-0d-color: #ff8b81;
+
+$deals-shop-button-bg: #9ae89a;
+$deals-shop-button-border: rgba($deals-shop-button-bg, 0);
+$deals-shop-button-active-bg: darken($deals-shop-button-bg, 10%);
+$deals-shop-button-active-border: rgba($deals-shop-button-bg, 0);
+$deals-shop-button-text: #FFF;

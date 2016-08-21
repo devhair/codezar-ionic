@@ -1,0 +1,20 @@
+{
+  "name": "bazaar",
+  "private": "true",
+  "devDependencies": {
+    "ionic": "driftyco/ionic-bower#1.2.4"
+  },
+  "dependencies": {
+    "bourbon": "~4.2.3",
+    "underscore": "~1.8.3",
+    "angular-moment": "^0.10.3",
+    "moment": "^2.12.0",
+    "ionmultiapp-icons": "https://bitbucket.org/picosypalas/ionmultiapp-icons.git",
+    "ngmap": "^1.17.3",
+    "ng-range-slider": "^0.2.0"
+  },
+  "resolutions": {
+    "moment": ">=2.8.0 <2.11.0",
+    "underscore": "~1.8.3"
+  }
+}

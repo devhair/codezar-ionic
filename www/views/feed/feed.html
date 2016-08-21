@@ -1,0 +1,35 @@
+<ion-view class="feed-view" cache-view="false">
+  <ion-header-bar class="feed-header">
+    <div class="logo-container">
+      <img class="logo-image" ng-src="./img/feed/logo.png"/>
+    </div>
+    <div class="buttons">
+      <button class="button button-clear cart-button" ui-sref="main.app.shopping-cart()">
+        <span class="badge cart-badge">{{getProductsInCart()}}</span>
+        <img class="cart-image" ng-src="./img/feed/cart-icon.png"/>
+      </button>
+    </div>
+  </ion-header-bar>
+  <ion-content class="categories-feeds-content" has-bouncing="false" delegate-handle="feeds-content">
+    <sliding-list>
+    	<ul center-edges class="sliding-list">
+        <sliding-item state="main.app.feed.fashion">
+          <a nav-transition="none" ui-sref="main.app.feed.fashion()">Fashion</a>
+        </sliding-item>
+        <sliding-item state="main.app.feed.food">
+          <a nav-transition="none" ui-sref="main.app.feed.food()">Food</a>
+        </sliding-item>
+        <sliding-item state="main.app.feed.travel">
+          <a nav-transition="none" ui-sref="main.app.feed.travel()">Travel</a>
+        </sliding-item>
+        <sliding-item state="main.app.feed.deals">
+          <a nav-transition="none" ui-sref="main.app.feed.deals()">Deals</a>
+        </sliding-item>
+        <sliding-item state="main.app.feed.real-state">
+          <a nav-transition="none" ui-sref="main.app.feed.real-state()">Real State</a>
+        </sliding-item>
+    	</ul>
+    </sliding-list>
+    <ion-nav-view name="category-feed" class="category-feed"></ion-nav-view>
+  </ion-content>
+</ion-view>

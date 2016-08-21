@@ -1,0 +1,86 @@
+<ion-view class="fashion-content-view" cache-view="false">
+  <ion-header-bar class="fashion-content-header">
+    <div class="buttons">
+      <button class="button button-clear back-button" ng-click="goBack()">Back</button>
+    </div>
+    <h1 class="title">{{product.name}}</h1>
+    <div class="buttons">
+      <button class="button button-clear share-button">Share</button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+    <ion-slide-box class="product-images-slider">
+      <ion-slide>
+        <div class="image-container">
+          <pre-img ratio="full">
+            <img class="product-image" ng-src="{{product.image}}" spinner-on-load/>
+          </pre-img>
+        </div>
+      </ion-slide>
+      <ion-slide ng-repeat="product_image in product.showcase_images track by $index">
+        <div class="image-container" multi-bg="[product_image]"></div>
+      </ion-slide>
+    </ion-slide-box>
+    <div class="row brief-info-row">
+      <div class="col">
+        <h3 class="product-name">{{product.name}}</h3>
+        <h5 class="product-store">topshop</h5>
+        <h4 class="product-price">${{product.price_sale}}</h4>
+      </div>
+    </div>
+    <div class="row options-row">
+      <div class="col pick-color-col">
+        <button class="button button-block icon-right ion-chevron-right pick-color-button" ng-click="openColorChooser()">
+          Color
+        </button>
+      </div>
+      <div class="col pick-size-col">
+        <button class="button button-block icon-right ion-chevron-right pick-size-button" ng-click="openSizeChooser()">
+          Size
+        </button>
+      </div>
+    </div>
+    <div class="row purchase-row">
+      <div class="col">
+        <button class="button button-block add-to-cart-button" ng-click="addToCart(product)">Add to cart</button>
+      </div>
+    </div>
+    <div class="row description-row">
+      <div class="col">
+        <h4 class="description-title">About me</h4>
+        <p class="description-paragraph">Give basics a romantic update with styles like this lace poet top. Cut with a high neckline it comes with an intricate lace detail to the bust and flowing hemline. Perfect worn with jeans for casual chic.</p>
+        <h4 class="description-title">Looking after me</h4>
+        <p class="description-paragraph">100% Viscose. Machine wash according to instructions on care label</p>
+        <h4 class="description-title">Size & Fit</h4>
+        <p class="description-paragraph">Model wears: UK 8 / EU 36 / US 4</p>
+        <p class="description-paragraph">Model’s height: 175 cm / 5’9”</p>
+        <h4 class="description-title">Product code</h4>
+        <p class="description-paragraph">8726543D</p>
+      </div>
+    </div>
+    <h2 class="suggested-title">Why don’t you try?</h2>
+    <div class="row suggested-products-row">
+      <div class="col col-50 fashion-product-container" ng-repeat="related_product in product.related_products">
+        <div class="list card">
+          <div class="item item-image product-image-wrapper">
+            <a class="product-anchor">
+              <pre-img ratio="_3_4">
+                <img class="product-image" ng-src="{{ related_product.image }}" spinner-on-load>
+              </pre-img>
+            </a>
+          </div>
+          <div class="item item-body product-description-wrapper">
+            <h5 class="product-title">
+              <a class="product-anchor">
+                {{ related_product.name }}
+              </a>
+            </h5>
+            <p class="product-description">
+              <b class="actual-price">${{related_product.price_sale}}</b>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

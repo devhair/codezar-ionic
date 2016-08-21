@@ -1,0 +1,29 @@
+<ion-view class="learn-view" cache-view="false">
+  <ion-header-bar class="learn-header">
+    <div class="buttons">
+      <button class="button button-clear skip-button" ng-show="show_skip_button" ng-click="skipIntro()">skip</button>
+    </div>
+  </ion-header-bar>
+  <ion-content class="learn-content" has-bouncing="false">
+    <div class="row slides-row">
+      <div class="col">
+        <ion-slide-box class="learn-slider" ng-class="{'hide-pager':show_call_to_action_button}" show-pager="true" delegate-handle="getting-started-slides" pager-click="pagerClicked(index)" on-slide-changed="slideChanged($index)">
+          <ion-slide>
+            <section class="slide-learn learn-sub-view" ng-include="'views/walkthrough/slide-1.html'"></section>
+          </ion-slide>
+          <ion-slide>
+            <section class="slide-questions getting-started-sub-view" ng-include="'views/getting-started/slide-2.html'"></section>
+          </ion-slide>
+          <ion-slide>
+            <section class="slide-pick-categories getting-started-sub-view" ng-include="'views/getting-started/slide-3.html'"></section>
+          </ion-slide>
+        </ion-slide-box>
+      </div>
+    </div>
+    <div class="row actions-row" ng-show="show_call_to_action_button">
+      <div class="col">
+        <a class="button button-full action-button" ui-sref="intro.auth-signup()">SIGN UP</a>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

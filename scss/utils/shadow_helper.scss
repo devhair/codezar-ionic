@@ -1,0 +1,27 @@
+@function calculate-slide-shador($slider-filter-line-active-bg, $slider-filter-thumb-size){
+  $start: -($slider-filter-thumb-size/2);
+  $active-slide-range-height: -6px;
+  $max-active-slide-range: -300px;
+  $shadows-effect: ();
+
+  @while $start > $max-active-slide-range{
+    $other-shadow-effect: #{$start} 0px 0px #{$active-slide-range-height} #{$slider-filter-line-active-bg};
+    $shadows-effect: append($shadows-effect, $other-shadow-effect, comma);
+    $start: $start + ($active-slide-range-height/2);
+  }
+
+  @return $shadows-effect;
+};
+
+
+$slider-filter-line-active-bg: red;
+$slider-filter-thumb-size: 22px;
+
+$shadow-magic: calculate-slide-shador($slider-filter-line-active-bg, $slider-filter-thumb-size);
+
+@debug $shadow-magic;
+
+// Is everything okay?
+sass {
+  a: $shadow-magic;
+}

@@ -1,0 +1,32 @@
+<ion-view class="welcome-view" cache-view="false">
+  <ion-content has-bouncing="false">
+    <div class="row images-row">
+      <div class="col images-outer-col">
+        <div class="row row-bottom logo-row">
+          <div class="col">
+            <div class="logo-container">
+              <pre-img ratio="_1_1" helper-class="square-image">
+                <img class="logo-image" ng-src="./img/walkthrough/welcome_logo-Bazaar.png" spinner-on-load/>
+            	</pre-img>
+            </div>
+          </div>
+        </div>
+        <div class="row illustration-row">
+          <div class="col">
+            <div class="illustration-container">
+              <pre-img ratio="_20_9" helper-class="square-image">
+                <img class="illustration-image" ng-src="./img/walkthrough/welcome_illustration.png" spinner-on-load/>
+            	</pre-img>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row actions-row">
+      <div class="col">
+        <a class="button button-block get-started-button" ui-sref="intro.walkthrough-learn()">Get Started</a>
+        <a class="button button-block button-clear auth-button" ui-sref="intro.auth-login()">Already have an account?</a>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,51 @@
+<ion-view class="feed-travel-view feed-sub-view" cache-view="false">
+  <ion-content>
+    <section ng-include="'views/common/sort-and-filters-bar.html'"></section>
+    <div class="products-row">
+      <div class="travel-product-container" ng-repeat="product in results = products">
+        <div class="row image-row">
+          <div class="col product-image-container">
+            <div multi-bg="[product.picture]" interval="3000">
+              <div class="row row-center content-inside-image">
+                <div class="col">
+                  <img class="travel-product-icon" ng-src="{{product.icon}}"/>
+                  <h2 class="product-name">
+                    <a class="product-anchor">{{product.name}}</a>
+                    <!-- <a class="product-anchor" ui-sref="main.app.feed.travel.content({productId: product.id})">{{product.name}}</a> -->
+                  </h2>
+                  <h4 class="product-tagline">{{product.category}}</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row info-row">
+          <div class="col description-col">
+            <h5 class="product-title">
+              <a class="product-anchor">{{product.name}} {{product.category}}</a>
+              <!-- <a class="product-anchor" ui-sref="main.app.feed.travel.content({productId: product.id})">{{product.name}} {{product.category}}</a> -->
+            </h5>
+            <p class="product-description">
+              {{product.description}}
+            </p>
+            <p class="product-address">
+              {{product.address}}
+            </p>
+          </div>
+          <div class="col col-25">
+            <div class="row">
+              <div class="col col-50 rating-col">
+                <i class="icon ion-android-star-outline"></i>
+                <span class="rating-value">{{product.rating}}</span>
+              </div>
+              <div class="col col-50 reviews-col">
+                <i class="icon ion-chatbubble-working"></i>
+                <span class="reviews-value">8</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

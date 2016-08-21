@@ -1,0 +1,21 @@
+$getting-started-color: #4D301C;
+$getting-started-question-active-option-bg: #FF984C;
+$getting-started-question-option-height: 36px;
+
+$getting-started-pick-categories-question-title-height: 30px;
+$getting-started-pick-categories-question-title-margin: 6px;
+$getting-started-pick-categories-question-paragraph-height: 28px;
+$getting-started-pick-categories-question-paragraph-margin: 8px;
+$getting-started-pick-categories-question-header: $getting-started-pick-categories-question-title-height + $getting-started-pick-categories-question-title-margin + $getting-started-pick-categories-question-paragraph-height + ($getting-started-pick-categories-question-paragraph-margin*2);
+
+$getting-started-question-option-bg:                 $getting-started-color !default;
+$getting-started-question-option-border:             transparent !default;
+$getting-started-question-option-text:               #FFF !default;
+$getting-started-question-option-active-bg:          $getting-started-question-active-option-bg !default;
+$getting-started-question-option-active-border:      transparent !default;
+
+$getting-started-pick-categories-question-check-color: #FFF;
+$getting-started-pick-categories-question-off-bg: #4D301C;
+$getting-started-pick-categories-question-off-border: transparent;
+$getting-started-pick-categories-question-on-bg: #FF984C;
+$getting-started-pick-categories-question-on-border: transparent;

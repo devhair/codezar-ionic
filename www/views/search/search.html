@@ -1,0 +1,71 @@
+<ion-view class="search-view" cache-view="false">
+  <ion-header-bar class="search-header">
+    <div class="row item-input-inset search-row">
+      <div class="col col-75">
+        <label class="item-input-wrapper search-label">
+          <i class="icon ion-ios-search placeholder-icon"></i>
+          <input type="search" placeholder="Search" name="search_query" ng-model="search.query">
+        </label>
+      </div>
+      <div class="col">
+        <button class="button button-clear cancel-button" ng-click="cancelSearch()">
+          Cancel
+        </button>
+      </div>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+    <!-- <div ng-if="results.length == 0">
+      <h2>No results</h2>
+    </div> -->
+    <div>
+      <section ng-include="'views/common/sort-and-filters-bar.html'"></section>
+      <div class="search-results-container">
+        <div class="products-row">
+          <div class="food-product-container" ng-repeat="product in results = (products | searchField : 'product.name' | filter:search.query)">
+            <div class="row info-row">
+              <div class="col logo-col">
+                <a class="product-anchor">
+                <!-- <a class="product-anchor" ui-sref="main.app.feed.food.content({productId: product.id})"> -->
+                  <pre-img ratio="_1_1">
+                    <img class="logo-image" ng-src="{{ product.image }}" spinner-on-load>
+                  </pre-img>
+                </a>
+              </div>
+              <div class="col description-col">
+                <div class="row">
+                  <div class="col data-col">
+                    <h5 class="product-title">
+                      <a class="product-anchor">{{product.name}}</a>
+                      <!-- <a class="product-anchor" ui-sref="main.app.feed.food.content({productId: product.id})">{{product.name}}</a> -->
+                    </h5>
+                    <p class="address-and-price-container">
+                      <span class="product-address">{{product.address}}</span>
+                      <span class="product-price-range" ng-repeat="price in [].constructor(product.price_range) track by $index">$</span>
+                    </p>
+                    <p class="product-tags-container">
+                      <span class="product-tag" ng-repeat="tag in product.tags">{{tag}}</span>
+                    </p>
+                  </div>
+                  <div class="col col-20 actions-col">
+                    <span class="product-rating rating-{{ product.rating | floor }}">{{product.rating}}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row row-center images-row">
+              <div class="col col-20 image-wrapper" ng-repeat="picture in product.pictures.slice(0, 5) track by $index">
+                <pre-img ratio="_1_1">
+                  <img class="product-image" ng-src="{{ picture }}" spinner-on-load>
+                </pre-img>
+                <div class="has-more-images" ng-if="$index == 4 && product.pictures.length > 5">
+                  <span class="images-count">{{ product.pictures.length - 5 }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

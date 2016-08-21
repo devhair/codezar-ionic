@@ -1,0 +1,24 @@
+<!-- <ion-popover-view class="card-chooser-popover" ng-class="{'contains-{{user_credit_cards.length}}-items' : true, 'contains-more-than-5-items' : (user_credit_cards.length > 5)}"> -->
+<ion-popover-view class="card-chooser-popover" ng-init="total_items = (show_new_card_button ? user_credit_cards.length + 1 : user_credit_cards.length)" ng-class="{'contains-{{ total_items }}-items' : true, 'contains-more-than-6-items' : (total_items > 5), 'has-bottom-button' : show_new_card_button}">
+  <ion-content has-bouncing="false">
+    <ion-scroll class="cards-scroller" direction="y">
+      <div class="list cards-list">
+        <div class="card-item row row-center" ng-repeat="card in user_credit_cards">
+          <label class="col col-80 item item-radio">
+        		<input type="radio" name="pick_card" ng-model="data.selected_card" ng-value="card" ng-change="selectCreditCard(card)">
+        		<div class="radio-content">
+        			<div class="item-content disable-pointer-events">
+                <span class="card-number">{{card.number}}</span>
+              </div>
+        			<i class="radio-icon disable-pointer-events icon ion-checkmark"></i>
+        		</div>
+        	</label>
+        	<a class="col col-20 button button-clear edit-card-button" ng-click="showEditCardPopup(card)">edit</a>
+        </div>
+      </div>
+    </ion-scroll>
+    <button class="button button-full new-card-button" ng-click="showNewCardPopup()" ng-show="show_new_card_button">
+      New Credit Card
+    </button>
+  </ion-content>
+</ion-popover-view>

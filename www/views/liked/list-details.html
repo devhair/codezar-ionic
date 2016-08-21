@@ -1,0 +1,19 @@
+<ion-view class="liked-view" cache-view="false">
+  <ion-header-bar align-title="left" class="bar-positive">
+    <div class="buttons">
+      <button class="button" ng-click="goBack()">Back</button>
+    </div>
+    <h1 class="title">List Details</h1>
+  </ion-header-bar>
+  <ion-content class="padding">
+    <img ng-src="http://lorempixel.com/200/100"/>
+    <h2>List Details</h2>
+    <div class="card">
+      <div class="item item-text-wrap">
+        <div>List Name: {{list.name}}</div>
+        <div>Created: {{list.creation_date}}</div>
+        <a ui-sref="main.app.feed.fashion.content()">Go to fashion content page</a>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

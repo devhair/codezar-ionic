@@ -1,0 +1,51 @@
+$account-bg: #ffe6dc;
+$account-color: #4d301c;
+$account-header-bg: #ff984c;
+$account-header-color: #FFF;
+
+$account-divider-color: #ecd5cb;
+
+$account-tabs-padding: 15px;
+$account-tabs-height: 45px;
+$account-tabs-bg: #FFF;
+$account-tabs-active-bg: #4d301c;
+$account-tabs-color: #4d301c;
+$account-tabs-active-color: #FFF;
+
+$account-orders-bg: #FFF;
+$account-orders-products-border: #ffe6dc;
+$account-orders-product-pre-img-bg: rgba(darken(#FFF, 10), .25);
+$account-orders-header-bg: #ecd5cb;
+$account-orders-header-color: #FFF;
+$account-orders-footer-color: #FFF;
+$account-orders-footer-delivered-bg: #7ae27a;
+$account-orders-footer-shipped-bg: #ff984c;
+$account-orders-footer-canceled-bg: #ff4737;
+
+
+$account-legal-border: #ffe6dc;
+
+$account-invite-button-bg: #ff984c;
+$account-invite-button-border: #ff984c;
+$account-invite-button-color: #FFF;
+
+$account-notifications-bg: #FFF;
+$account-notifications-border: #ffe6dc;
+$account-notifications-item-height: 45px;
+$account-notifications-toggle-bg: #ecd5cb;
+$account-notifications-toggle-handle-bg: #ffe6dc;
+$account-notifications-toggle-active-bg: #ff984c;
+
+$account-profile-data-bg: #FFF;
+$account-profile-data-border: #4d301c;
+$account-profile-data-color: #4d301c;
+
+$account-addresses-popover-button-bg: #FFF;
+$account-addresses-popover-button-border: rgba($account-addresses-popover-button-bg, 0);
+$account-addresses-popover-button-active-bg: $account-addresses-popover-button-bg;
+$account-addresses-popover-button-active-border: $account-addresses-popover-button-border;
+$account-addresses-popover-button-color: #4d301c;
+
+
+$account-profile-image-ratio: 1 1;
+$pre-img-ratios: append($pre-img-ratios, $account-profile-image-ratio);

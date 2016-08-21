@@ -1,0 +1,100 @@
+.welcome-view
+{
+	background-color: $welcome-bg;
+
+	.images-row
+	{
+		padding: 0px;
+		height: 70%;
+
+		.col,
+		.row
+		{
+			padding: 0px;
+			margin: 0px;
+		}
+
+		.images-outer-col
+		{
+			height: 100%;
+		}
+
+		.logo-row
+		{
+			height: 58%;
+		}
+		.illustration-row
+		{
+			height: 42%;
+		}
+
+		.pre-img
+		{
+			background-color: transparent;
+		}
+		.spinner-on-load
+		{
+		  color: $welcome-color;
+		}
+		ion-spinner.spinner-on-load
+		{
+		  stroke: $welcome-color;
+		}
+
+		.logo-container
+		{
+			margin: 0px auto;
+			width: 35vh;
+
+			.logo-image
+	    {
+	      width: 100%;
+	    }
+		}
+
+		.illustration-container
+		{
+			margin: 0px;
+			padding-top: 10px;
+
+			.illustration-image
+	    {
+	      width: 100%;
+	    }
+		}
+	}
+
+	.actions-row
+	{
+		margin: 0px;
+		padding: 0px;
+		height: 30%;
+
+		& > .col
+		{
+			padding: 0px;
+		}
+
+		.get-started-button
+		{
+			margin: 40px 9% 10px 9%;
+			text-transform: uppercase;
+			height: $get-started-button-height;
+			line-height: $get-started-button-height - 5px;
+			font-size: 20px;
+			border-radius: $get-started-button-height/2;
+
+			@include button-style($get-started-button-bg, $get-started-button-border, $get-started-button-active-bg, $get-started-button-active-border, $get-started-button-text);
+		}
+
+		.auth-button
+		{
+			@include button-clear($auth-button-text);
+			margin: 0px;
+			padding: 5px 0px;
+			min-height: 0px;
+		  height: initial;
+		  line-height: initial;
+		}
+	}
+}

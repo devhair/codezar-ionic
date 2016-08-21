@@ -1,0 +1,374 @@
+.checkout-view
+{
+	background-color: $checkout-bg;
+
+	.checkout-header
+	{
+		background-color: $checkout-header-bg !important;
+		background: $checkout-header-bg !important;
+		border: none !important;
+		background-size: 0px !important; // To remove bottom border on header
+
+		.cancel-button
+		{
+			color: $checkout-header-color;
+			font-weight: 500;
+		}
+
+		.title
+		{
+			color: $checkout-header-color;
+			font-weight: 300;
+		}
+	}
+
+	.checkout-content
+	{
+		&.has-footer
+		{
+		  bottom: $save-address-button-height;
+		}
+	}
+
+	.checkout-footer
+	{
+		padding: 0px;
+		height: $save-address-button-height;
+
+		.place-order-button
+		{
+			margin: 0px;
+			width: 100%;
+			height: $save-address-button-height;
+			line-height: $save-address-button-height - 5px;
+			font-size: 20px;
+			text-transform: uppercase;
+
+			@include button-style($save-address-button-bg, $save-address-button-border, $save-address-button-active-bg, $save-address-button-active-border, $save-address-button-text);
+
+			&::after
+			{
+				bottom: 0px;
+			}
+		}
+	}
+
+	.order-brief-row
+	{
+		background-color: $checkout-order-brief-bg;
+		height: $checkout-order-brief-height;
+		padding: 0px 15px;
+		margin: 0px;
+
+		.col
+		{
+			padding: 0px;
+			height: 100%;
+		}
+
+		.illustration-row
+		{
+			padding: 0px;
+			height: 100%;
+
+			.illustration-col
+			{
+				padding: 8px 5px;
+				@include flex(0, 0, $checkout-order-brief-height);
+			}
+		}
+
+		.order-brief-illustration
+		{
+			height: 100%;
+		}
+
+		.order-brief-callout
+		{
+			background-color: $checkout-order-brief-callout-bg;
+			padding: 0px 9px;
+			margin: (($checkout-order-brief-height - $checkout-order-brief-callout-height)/2) 0px (($checkout-order-brief-height - $checkout-order-brief-callout-height)/2) 5px;
+			position: relative;
+			height: $checkout-order-brief-callout-height;
+			line-height: $checkout-order-brief-callout-height;
+			font-size: 15px;
+			color: $checkout-order-brief-callout-color;
+			display: inline-block;
+			border-radius: 0px 6px 6px 6px;
+			font-weight: 500;
+
+			&:before
+			{
+				content: '';
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 0 9px 9px 0;
+				border-color: rgba($checkout-order-brief-bg, 0) $checkout-order-brief-callout-bg rgba($checkout-order-brief-bg, 0) rgba($checkout-order-brief-bg, 0);
+				position: absolute;
+			  top: 0px;
+			  left: -9px;
+			}
+		}
+
+		.brief-total
+		{
+			display: block;
+			color: $checkout-order-brief-color;
+			font-size: 15px;
+			font-weight: 600;
+			line-height: 18px;
+		}
+
+		.order-total-col
+		{
+			height: initial;
+
+			.order-total-wrapper
+			{
+				float: right;
+				padding: 0px 5px;
+			}
+		}
+
+		.brief-total-title
+		{
+			display: block;
+			color: $checkout-order-brief-color;
+			font-size: 14px;
+			line-height: 17px;
+			font-weight: 500;
+		}
+	}
+
+	.address-row
+	{
+		padding: 20px 15px;
+		margin: 0px;
+
+		.col
+		{
+			padding: 0px;
+		}
+
+		.choose-addresses-button
+		{
+			margin: 0px;
+			border-radius: 6px;
+			text-align: left;
+			padding: 0px 15px;
+
+			@include button-style($addresses-popover-button-bg, $addresses-popover-button-border, $addresses-popover-button-active-bg, $addresses-popover-button-active-border, $addresses-popover-button-color);
+
+			&::before
+			{
+				font-size: 20px;
+			}
+		}
+	}
+
+	.checkout-sub-title
+	{
+		color: $checkout-color;
+		padding: 35px 15px 15px;
+		text-align: center;
+		font-size: 18px;
+		font-weight: 400;
+		margin: 0px;
+	}
+
+	.promo-code-row
+	{
+		padding: 0px 15px;
+		margin: 0px;
+
+		.col
+		{
+			padding: 0px;
+		}
+
+		.promo-item
+		{
+			border: none;
+			background-color: $checkout-promo-code-bg;
+			border-radius: 6px;
+			padding: 0px 15px 0px 0px;
+			min-height: $button-height + 5px;
+
+			.input-label
+			{
+				color: $checkout-color;
+				text-transform: uppercase;
+				font-size: 15px;
+				background-color: $checkout-promo-code-label-bg;
+				padding: 0px 10px 0px 15px;
+				height: $button-height + 5px;
+				line-height: $button-height + 5px;
+				border-right: 1px solid $checkout-promo-code-border;
+			}
+
+			input
+			{
+				padding-left: 10px;
+			}
+		}
+	}
+
+	.card-row
+	{
+		padding: 20px 15px;
+		margin: 0px;
+
+		.col
+		{
+			padding: 0px;
+		}
+
+		.choose-card-button
+		{
+			margin: 0px;
+			border-radius: 6px;
+			text-align: left;
+			padding: 0px 15px;
+
+			@include button-style($addresses-popover-button-bg, $addresses-popover-button-border, $addresses-popover-button-active-bg, $addresses-popover-button-active-border, $addresses-popover-button-color);
+
+			&::before
+			{
+				font-size: 20px;
+			}
+		}
+	}
+
+	.checkout-products
+	{
+		background-color: $checkout-products-bg;
+		border-top: 2px dashed $checkout-products-border;
+		margin: 0px;
+		padding: 10px 30px 0px;
+
+		.item.checkout-product
+		{
+			border: none;
+			margin: 0px;
+			padding: 0px 2px;
+			border-bottom: 1px solid $shopping-bill-border;
+
+			&:last-child
+			{
+				border-color: $checkout-products-border;
+			}
+
+			.row
+			{
+				padding: 0px;
+
+				.col
+				{
+					padding: 0px;
+				}
+			}
+
+			.col.product-image-col
+			{
+				padding: 5px 10px 5px 0px;
+
+				.product-image-container
+				{
+					padding-bottom: 100%;
+
+					&.multi-bg-outer
+					{
+						background-color: $shopping-cart-product-pre-img-bg;
+
+						.bg-overlay
+						{
+							opacity: 0;
+						}
+					}
+				}
+			}
+
+			.product-name
+			{
+				font-size: 14px;
+				color: $checkout-color;
+				font-weight: 300;
+			}
+
+			.product-price
+			{
+				float: right;
+				font-size: 14px;
+				font-weight: 300;
+				color: $checkout-color;
+			}
+		}
+	}
+
+	.checkout-bill
+	{
+		padding: 0px 30px 15px;
+		margin: 0px;
+		background-color: $shopping-bill-bg;
+
+		.item
+		{
+			border-top-style: none;
+		  border-right-style: none;
+		  border-left-style: none;
+			margin: 0px;
+			padding: 15px 2px;
+			border-color: $shopping-bill-border;
+			color: $shopping-bill-color;
+
+			&:last-child
+			{
+				border-bottom-style: none;
+
+				&.bill-total
+				{
+					border-top-style: solid;
+  				border-color: $shopping-bill-color;
+					margin-top: -1px;
+
+					.bill-item-title,
+					.bill-item-value
+					{
+						font-weight: 500;
+						font-size: 18px;
+					}
+				}
+			}
+
+			.row
+			{
+				padding: 0px;
+
+				.col
+				{
+					padding: 0px;
+				}
+			}
+
+			.bill-item-title,
+			.bill-item-value
+			{
+				font-weight: 300;
+				display: block;
+				font-size: 16px;
+			}
+
+			.bill-item-title
+			{
+				text-align: left;
+			}
+
+			.bill-item-value
+			{
+				text-align: right;
+			}
+		}
+	}
+
+}

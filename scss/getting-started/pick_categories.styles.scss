@@ -1,0 +1,158 @@
+.getting-started-sub-view.slide-pick-categories
+{
+	height: inherit;
+
+	.question-row
+	{
+		padding: 0px;
+		height: inherit;
+
+		& > .col
+		{
+			padding: 0px;
+			height: inherit;
+		}
+
+		.question-title
+		{
+			color: $getting-started-color;
+			text-align: center;
+			margin: $getting-started-pick-categories-question-title-margin 9% 0px;
+			font-size: 22px;
+			font-weight: 400;
+			line-height: $getting-started-pick-categories-question-title-height;
+		}
+
+		.question-paragraph
+		{
+			color: $getting-started-color;
+			text-align: center;
+			margin: $getting-started-pick-categories-question-paragraph-margin 9%;
+			font-size: 14px;
+			line-height: $getting-started-pick-categories-question-paragraph-height;
+			font-weight: 300;
+		}
+
+		.question-options-outer
+		{
+			@include calc(height, "100% - #{($getting-started-pick-categories-question-header)}");
+
+			& > .scroll
+			{
+				height: 100%;
+			}
+		}
+
+		.question-options
+		{
+			& > .list
+			{
+				@include flex-wrap(wrap);
+				@include display-flex();
+				width: 100%;
+				padding: 3px;
+
+				.item
+				{
+					padding: 3px;
+					@include flex(0, 0, 50%);
+					max-width: 50%;
+					display: block;
+					background: transparent;
+					border: none;
+					margin: 0px;
+
+					.checkbox
+					{
+						top: 3px;
+						right: 3px;
+						left: 3px;
+						bottom: 3px;
+						margin: 0px;
+						padding: 0px;
+						@include transform-style(preserve-3d);
+						@include checkbox-style($getting-started-pick-categories-question-off-border, $getting-started-pick-categories-question-on-bg, $getting-started-pick-categories-question-on-border);
+					}
+
+					.checkbox-icon
+					{
+						width: 100%;
+						height: 100%;
+
+						&::before
+						{
+							border-radius: 0px;
+							border: none;
+							background: $getting-started-pick-categories-question-off-bg;
+							opacity: 0.6;
+						}
+
+						&::after
+						{
+							height: 25px;
+							// top: 40%;
+							width: 40%;
+							left: 30%;
+							border-width: 10px;
+							border-color: $getting-started-pick-categories-question-check-color;
+							// To vertically center the title: http://zerosixthree.se/vertical-align-anything-with-just-3-lines-of-css/
+							@include transform(translateY(-50%) rotate(-45deg));
+							top: 50%;
+						}
+					}
+
+					.checkbox-title
+					{
+						position: absolute;
+						font-weight: 600;
+						text-transform: uppercase;
+						font-size: 22px;
+						color: #FFF;
+						text-align: center;
+						width: 70%;
+						left: 15%;
+						word-break: break-word;
+						overflow: visible;
+						white-space: normal;
+						// To vertically center the title: http://zerosixthree.se/vertical-align-anything-with-just-3-lines-of-css/
+						top: 50%;
+						@include transform(translateY(-50%));
+					}
+
+					input:checked + .checkbox-icon + .checkbox-title
+					{
+						display: none;
+					}
+				}
+			}
+
+			.category-item-wrapper
+			{
+				// This is how we get the 1x1 aspect ratio as padding is calculated based on width => (height = padding-top = 100% width)
+				padding-top: 100%;
+				height: 0px;
+				position: relative;
+
+				.category-item-content
+				{
+					position: absolute;
+					top: 0;
+					bottom: 0;
+					left: 0;
+					right: 0;
+					overflow: hidden;
+
+					.multi-bg-outer
+					{
+						background-color: transparent;
+
+						.bg-overlay
+						{
+							background-color: transparent;
+						}
+					}
+				}
+			}
+		}
+	}
+}

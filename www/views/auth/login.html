@@ -1,0 +1,37 @@
+<ion-view class="login-view auth-view" cache-view="false">
+  <ion-content has-bouncing="false">
+    <div class="row row-bottom images-row">
+      <div class="col">
+        <div class="illustration-container">
+          <pre-img ratio="_17_9" helper-class="square-image">
+            <img class="illustration-image" ng-src="./img/auth/login_illustration.png" spinner-on-load/>
+        	</pre-img>
+        </div>
+      </div>
+    </div>
+    <div class="row form-row">
+      <div class="col">
+        <a class="button button-block facebook-button" ng-click="doFacebookLogIn()">Log in with Facebook</a>
+        <span class="form-divider">or</span>
+        <form name="login_form" class="form-container" novalidate>
+          <div class="input-list list list-inset">
+            <label class="item item-input">
+              <input type="text" placeholder="email" name="email" ng-model="user.email" required>
+            </label>
+            <label class="item item-input" show-hide-container>
+              <input type="password" placeholder="password" name="password" ng-model="user.password" required show-hide-input>
+            </label>
+          </div>
+          <p ng-show="error" class="message error">{{error}}</p>
+          <button type="submit" class="button button-block auth-action-button" ng-click="doLogIn()" ng-disabled="login_form.$invalid">
+            Log in
+          </button>
+        </form>
+        <div class="alternative-actions">
+          <a class="action-link button button-small button-clear" ui-sref="intro.auth-forgot-password()">Forgot Password?</a>
+          <a class="action-link button button-small button-clear" ui-sref="intro.auth-signup()">Sign up</a>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

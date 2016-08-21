@@ -1,0 +1,63 @@
+.getting-started-sub-view.slide-questions
+{
+	.question-row
+	{
+		padding: 0px;
+
+		& > .col
+		{
+			padding: 0px;
+		}
+
+		.question-title
+		{
+			color: $getting-started-color;
+			text-align: center;
+			margin: 6px 18% 0px;
+			font-size: 22px;
+			font-weight: 400;
+			line-height: 30px;
+		}
+
+		.question-options
+		{
+			margin: 30px 9% 0px;
+			display: block;
+
+			.item-radio
+			{
+				margin-bottom: 20px;
+				height: $getting-started-question-option-height;
+				border-radius: $getting-started-question-option-height / 2;
+				@include item-style($getting-started-question-option-bg, $getting-started-question-option-border, $getting-started-question-option-text);
+
+				&:last-child
+				{
+					margin-bottom: 0px;
+				}
+
+				.item-content
+				{
+					background-color: $getting-started-question-option-bg;
+					text-align: center;
+					font-size: 18px;
+					line-height: $getting-started-question-option-height - 2px;
+					padding: 0px;
+				}
+
+				input
+				{
+					&:checked + .radio-content .item-content
+					{
+						background: $getting-started-question-active-option-bg;
+					}
+
+					&:checked + .radio-content .radio-icon
+					{
+						visibility: hidden;
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,101 @@
+.account-view
+{
+	background-color: $account-bg;
+
+	.account-header
+	{
+		background-color: $account-header-bg !important;
+		background: $account-header-bg !important;
+		border: none !important;
+		background-size: 0px !important; // To remove bottom border on header
+
+		.title
+		{
+			color: $account-header-color;
+			font-weight: 300;
+		}
+	}
+
+	.account-tabs
+	{
+		justify-content: flex-start;
+		height: 100%;
+		border-width: 0px;
+
+		.tabs
+		{
+			top: 0px !important;
+		}
+
+		.tab-nav.tabs
+		{
+			padding: 0px $account-tabs-padding;
+			margin: $account-tabs-padding 0px;
+			height: $account-tabs-height;
+			line-height: $account-tabs-height;
+			border-radius: 6px;
+
+			.tab-item
+			{
+				background-color: $account-tabs-bg;
+				color: $account-tabs-color;
+				opacity: 1;
+
+				&:nth-of-type(1)
+				{
+					border-top-left-radius: 6px;
+					border-bottom-left-radius: 6px;
+				}
+
+				&:last-child
+				{
+					border-top-right-radius: 6px;
+					border-bottom-right-radius: 6px;
+				}
+
+				&.tab-item-active
+				{
+					background-color: $account-tabs-active-bg;
+					color: $account-tabs-active-color;
+				}
+
+				.tab-title
+				{
+					text-transform: none;
+					font-size: 16px;
+					font-weight: 400;
+				}
+			}
+		}
+	}
+}
+
+// <ion-view>
+.account-sub-view
+{
+	background-color: $account-bg;
+
+	ion-content
+	{
+		// top: $tabs-height + (2*$account-tabs-padding);
+		// bottom: $bar-height + $tabs-height;
+		top: $account-tabs-height + (2*$account-tabs-padding) !important;
+		bottom: $bar-height + $tabs-height; // $tabs-height reffer to bottom tabs
+	}
+}
+
+.platform-ios.platform-cordova
+{
+  // iOS has a status bar which sits on top of the header.
+  // Bump down everything to make room for it. However, if
+  // if its in Cordova, and set to fullscreen, then disregard the bump.
+	.account-sub-view
+	{
+		background-color: $account-bg;
+
+		ion-content
+		{
+			bottom: $bar-height + $tabs-height + $ios-statusbar-height; // $tabs-height reffer to bottom tabs
+		}
+	}
+}

@@ -1,0 +1,44 @@
+<ion-view class="feed-deals-view feed-sub-view" cache-view="false">
+  <ion-content>
+    <section ng-include="'views/common/sort-and-filters-bar.html'"></section>
+    <div class="products-row">
+      <div class="card deals-product-container" ng-repeat="product in results = products">
+        <div class="row row-center top-row">
+          <div class="col col-66 logo-col">
+            <img class="deal-logo" ng-src="{{product.picture}}"/>
+          </div>
+          <div class="col shop-col">
+            <button class="button shop-button">
+              CLAIM
+            </button>
+          </div>
+        </div>
+        <div class="row middle-row">
+          <div class="col col-75">
+            <h5 class="product-title">
+              <a class="product-anchor">{{product.name}}</a>
+              <!-- <a class="product-anchor" ui-sref="main.app.feed.deals.content({productId: product.id})">{{product.name}}</a> -->
+            </h5>
+            <p class="product-description">
+              {{product.description}}
+            </p>
+          </div>
+          <div class="col bookmark-col">
+            <a class="button button-icon icon ion-pricetag bookmark-button"></a>
+          </div>
+        </div>
+        <div class="row bottom-row">
+          <div class="col col-75">
+            <span class="deal-code">{{product.code}}</span>
+          </div>
+          <div class="col time-col">
+            <div class="time-left-container">
+              <span class="deal-time-left" ng-class="{'days-left-1': ((product.expiration_date | amDifference : null : 'hours') <= 10) && ((product.expiration_date | amDifference : null : 'hours') > 0), 'days-left-0': (product.expiration_date | amDifference : null : 'hours') < 0}" am-time-ago="product.expiration_date"></span>
+              <i class="icon ion-android-time"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

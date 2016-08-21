@@ -1,0 +1,774 @@
+.filters-view
+{
+	background-color: $filters-bg;
+
+	.filters-header
+	{
+		background-color: $filters-header-bg !important;
+		background: $filters-header-bg !important;
+		border: none !important;
+		background-size: 0px !important; // To remove bottom border on header
+
+		.cancel-button,
+		.apply-button
+		{
+			color: $filters-header-color;
+			font-weight: 500;
+		}
+
+		.title
+		{
+			color: $filters-header-color;
+			font-weight: 300;
+		}
+	}
+
+	.filters-content-outer
+	{
+		padding: 0px 15px;
+
+		& > .scroll
+		{
+			height: 100%;
+		}
+
+		.filter-tabs
+		{
+			padding: 15px 0px;
+			height: $filters-tabs-height;
+
+			&.button-bar
+			{
+				& > .button
+				{
+					background-color: $filters-tabs-bg;
+					color: $filters-tabs-color;
+					padding: 8px 0px;
+					min-height: ($button-height + 5px) - (16px);
+					line-height: ($button-height) - (16px);
+
+					&.active,
+					&.activated
+					{
+						background-color: $filters-tabs-selected-bg;
+						color: $filters-tabs-selected-color;
+
+						.tab-title
+						{
+							border-left-color: rgba($filters-tabs-selected-bg, 0) !important;
+						}
+
+						& + .button
+						{
+							.tab-title
+							{
+								border-left-color: $filters-tabs-bg;
+							}
+						}
+					}
+
+					&:first-child
+					{
+						border-radius: 6px 0px 0px 6px;
+
+						.tab-title
+						{
+							border-left-color: $filters-tabs-bg;
+						}
+				 	}
+
+					&:last-child
+					{
+						border-radius: 0px 6px 6px 0px;
+					}
+
+					.tab-title
+					{
+						display: block;
+						padding: 0px 8px;
+						border-left: 1px solid $filters-tabs-divider;
+					}
+				}
+			}
+		}
+
+		.filter-tabs-slider
+		{
+			@include calc(height, "100% - #{($filters-tabs-height)}");
+
+			.filter-tab-section
+			{
+				height: 100%;
+
+				& > .scroll-view
+				{
+					height: 100%;
+
+					& > .scroll
+					{
+						padding-bottom: 20px;
+
+						& + .scroll-bar
+						{
+							.scroll-bar-indicator
+							{
+								opacity: 0 !important;
+							}
+						}
+					}
+				}
+
+				.filters-title
+				{
+					margin: 60px 0px 20px;
+					text-align: center;
+					font-size: 18px;
+					font-weight: 400;
+					color: $filter-group-color;
+				}
+
+				.filter-group
+				{
+					border-radius: 6px;
+					margin: 0px 0px 15px 0px;
+					box-shadow: none;
+					// padding: 15px 15px 5px;
+					padding: 15px 0px 5px;
+					background-color: $filter-group-bg;
+					color: $filter-group-color;
+
+					// Reset child border radius
+					// *{
+					// 	border-radius: 0px;
+					// }
+
+					&:last-child
+					{
+						// margin-bottom: 0px;
+					}
+
+					.item-divider
+					{
+						padding: 0px 2px 12px;
+						background-color: $filter-group-bg;
+						border: none;
+					  font-weight: 300;
+					  font-size: 15px;
+						color: $filter-group-color;
+						border-bottom: 1px solid $filter-group-border;
+						// margin: 0px;
+						margin: 0px 15px;
+						line-height: initial;
+  					min-height: 0px;
+					}
+
+					.filter-options-container
+					{
+						margin: 0px 15px;
+					}
+
+					.category-filters
+					{
+						display: block;
+
+						.list
+						{
+							.item
+							{
+								background-color: $filter-group-bg;
+								border-color: $filter-group-border;
+								color: $filter-group-color;
+								font-weight: 400;
+
+								.item-content
+								{
+									padding-left: 45px;
+								}
+
+								.radio-icon
+								{
+									color: $filter-group-active-color;
+									top: -4px;
+								}
+							}
+						}
+
+						.item-radio input {
+						  &:checked + .radio-content .item-content {
+						    /* style the item content when its checked */
+						    background: $filter-group-bg;
+						  }
+						}
+
+						.category-icon
+						{
+							position: absolute;
+  						width: 35px;
+							top: 9px;
+  						left: 0px;
+						}
+					}
+
+					.tags-filters
+					{
+						display: inline-block;
+						padding-top: 15px;
+
+						.item-checkbox
+						{
+							float: left;
+							padding: 0px;
+							border: none;
+							margin: 0px;
+							@include display(inline-flex);
+							margin: 0px 8px 10px 0px;
+
+							.checkbox
+							{
+								position: relative;
+								top: 0px;
+								bottom: 0px;
+								left: 0px;
+								right: 0px;
+								padding: 0px;
+	  						margin: 0px;
+
+								.checkbox-title
+								{
+									padding: 0px 10px;
+									height: $tag-filter-item-height;
+									margin: 0px;
+									border-radius: 15px;
+									border: 1px solid $filter-group-color;
+									background-color: $filter-group-bg;
+									color: $filter-group-color;
+								  font-weight: 400;
+									font-size: 16px;
+  								line-height: $tag-filter-item-height - 2px;
+								}
+
+							  & input:checked + .checkbox-title {
+							    color: $tag-filter-active-color;
+									background: $tag-filter-active-bg;
+									border-color: $tag-filter-active-bg;
+							  }
+							}
+						}
+					}
+
+					.color-filters
+					{
+						display: block;
+						padding-top: 15px;
+						padding-bottom: 10px;
+
+						.list
+						{
+							@include display(flex);
+							@include flex-wrap(wrap);
+							width: 100%;
+						}
+
+						.item-radio
+						{
+						  display: block;
+						  padding: 0px 5px 10px 5px;
+							@include flex-basis(14.2%);
+							border: none;
+
+							.item-content
+							{
+								padding: 0px;
+								border-radius: 50%;
+								border-width: 2px;
+								border-style: solid;
+								@include calc(padding-bottom, "100% - #{4px}");
+								position: relative;
+							}
+
+							input:checked + .radio-content .item-content
+							{
+								border-color: $color-filter-active-border !important;
+							}
+						}
+					}
+
+					.size-filters,
+					.budget-filters
+					{
+						display: block;
+						padding-top: 15px;
+						padding-bottom: 20px;
+
+						.list
+						{
+							@include display(flex);
+							width: 100%;
+						}
+
+						.item-radio
+						{
+						  @include flex(1);
+						  display: block;
+						  padding: 0px 8px 0px 0px;
+						  width: 100%;
+							border: none;
+
+							&:last-child
+							{
+								padding: 0px;
+							}
+
+							.item-content
+							{
+								padding: 0px;
+								background-color: $size-filter-bg;
+								color: $size-filter-color;
+								border-radius: 6px;
+								border: 1px solid $size-filter-border;
+								font-weight: 400;
+								font-size: 16px;
+								@include calc(padding-bottom, "100% - #{2px}");
+								position: relative;
+
+								.radio-tag-content
+								{
+									position: absolute;
+									left: 0px;
+									right: 0px;
+									text-align: center;
+									height: $size-filter-item-height;
+									line-height: $size-filter-item-height;
+									@include calc(top, "50% - #{$size-filter-item-height/2}");
+								}
+							}
+
+							input:checked + .radio-content .item-content
+							{
+								background-color: $size-filter-active-bg;
+								color: $size-filter-active-color;
+								border-color: $size-filter-active-bg;
+							}
+						}
+					}
+
+					.ingredients-filters
+					{
+						.list
+						{
+							.item-checkbox
+							{
+								padding-left: 40px;
+
+								.checkbox
+								{
+									top: 0px;
+									right: 0px;
+									left: 0px;
+									padding: 16px 5px;
+									margin: 0px;
+
+									.checkbox-icon
+									{
+										width: 22px;
+  									height: 22px;
+
+										&::before
+										{
+											border-radius: 6px;
+											border: none;
+											background-color: $filter-group-alt-option-bg;
+										}
+
+										&::after
+										{
+											border-width: 3px;
+											top: 28%;
+  										left: 22%;
+											width: 12px;
+  										height: 8px;
+										}
+									}
+								}
+							}
+						}
+					}
+
+					.show-filters
+					{
+						.list
+						{
+							.item-radio
+							{
+								padding: 16px;
+								padding-left: 0px;
+
+								.item-content
+								{
+									background-color: $filter-group-alt-bg;
+									color: $filter-group-color;
+									border-color: $filter-group-alt-border;
+									padding: 0px;
+									padding-left: 40px;
+								}
+
+								.radio-content
+								{
+									.radio-icon
+									{
+										left: 0px;
+										right: auto;
+										border-radius: 50%;
+										border: 5px solid $filter-group-alt-option-bg;
+										background-color: $filter-group-alt-option-bg;
+										width: 22px;
+  									height: 22px;
+										padding: 0px;
+										visibility: visible;
+									  margin: 16px 5px;
+
+										&::before
+										{
+											content: '';
+										}
+									}
+								}
+
+								input:checked + .radio-content
+								{
+									.radio-icon
+									{
+										background-color: #FFF;
+									}
+								}
+							}
+						}
+					}
+
+					.price-filters
+					{
+						.range
+						{
+							padding: 10px 15px 0px;
+						}
+
+						.range-output-container
+						{
+							padding: 0px 15px;
+							display: inline-block;
+  						width: 100%;
+
+							.range-output
+							{
+								font-size: 12px;
+								font-weight: 500;
+
+								&:first-child
+								{
+									float: left;
+								}
+								&:last-child
+								{
+									float: right;
+								}
+							}
+						}
+
+						// Range Slider
+						.range-slider
+						{
+						  overflow: hidden;
+						  position: relative;
+						  width: 100%;
+						  height: $range-slider-height;
+						  padding: 0px;
+
+						  input
+						  {
+						    pointer-events: none;
+						    position: absolute;
+						    overflow: hidden;
+						    left: 0;
+						    top: 0;
+						    width: 100%;
+								height: $range-slider-height;
+						    outline: none;
+						    margin: 0px;
+						    padding: 0px;
+						    background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, $slider-filter-line-bg), color-stop(100%, $slider-filter-line-bg));
+						    background: linear-gradient(to right, $slider-filter-line-bg 0%, $slider-filter-line-bg 100%);
+						    background-position: center;
+						    background-size: 99% $range-track-height;
+						    background-repeat: no-repeat;
+						    -webkit-appearance: none;
+
+						    &::-webkit-slider-thumb
+						    {
+						      width: $slider-filter-thumb-size/2;
+						      height: $slider-filter-thumb-size;
+						      border-radius: $slider-filter-thumb-size/2;
+						      background-color: $slider-filter-thumb-bg;
+						      box-shadow: none;
+						      pointer-events: all;
+						      position: relative;
+						      z-index: 1;
+						      outline: 0;
+						    }
+
+						    &::-webkit-slider-thumb:before
+						    {
+						      /* what creates the colorful line on the left side of the slider */
+						      top: ($slider-filter-thumb-size / 2) - ($range-track-height / 2);
+						      left: -2000px;
+						      width: 2000px;
+						      background: $slider-filter-line-active-bg;
+						      content: ' ';
+						    }
+
+						    &:first-of-type
+						    {
+						      &::-webkit-slider-thumb
+						      {
+						        z-index: 3;
+
+						        &::before
+						        {
+						          /* what creates the colorful line on the left side of the slider */
+						          top: ($slider-filter-thumb-size / 2) - ($range-track-height / 2);
+						          left: -2000px;
+						          width: 2000px;
+						          background: $slider-filter-line-bg;
+						          content: ' ';
+						        }
+						      }
+						    }
+
+						    // Mozilla
+						    &::-moz-range-thumb
+						    {
+						      pointer-events: all;
+						      position: relative;
+						      z-index: 10;
+						      -moz-appearance: none;
+						      background: linear-gradient(to bottom, $slider-filter-line-bg 0%, $slider-filter-line-bg 100%);
+						      width: 11px;
+						    }
+
+						    &::-moz-range-track
+						    {
+						      position: relative;
+						      z-index: -1;
+						      background-color: $slider-filter-line-bg;
+						      border: 0;
+						    }
+
+						    &:last-of-type::-moz-range-track
+						    {
+						      -moz-appearance: none;
+						      background: none transparent;
+						      border: 0;
+						    }
+						  }
+						}
+					}
+
+					.budget-filters
+					{
+						.item-radio
+						{
+							.item-content
+							{
+								padding: 5px 0px;
+								position: initial;
+								font-size: 14px;
+
+								.radio-tag-content
+								{
+									position: initial;
+									text-align: center;
+									height: initial;
+								  line-height: initial;
+								  top: initial;
+								  bottom: initial;
+								  left: initial;
+								  right: initial;
+								  display: block;
+								}
+							}
+						}
+					}
+
+					.distance-filters
+					{
+						.range-output
+						{
+							font-size: 12px;
+							font-weight: 500;
+							float: right;
+						}
+
+						.range
+						{
+							padding: 0px 15px;
+
+							input
+							{
+								margin: 0px;
+								padding: 0px;
+								background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, $slider-filter-line-bg), color-stop(100%, $slider-filter-line-bg));
+							  background: linear-gradient(to right, $slider-filter-line-bg 0%, $slider-filter-line-bg 100%);
+							  background-position: center;
+							  background-size: 99% $range-track-height;
+							  background-repeat: no-repeat;
+							  -webkit-appearance: none;
+
+							  &::-webkit-slider-thumb
+								{
+							    width: $slider-filter-thumb-size;
+							    height: $slider-filter-thumb-size;
+							    background-color: $slider-filter-thumb-bg;
+									box-shadow: none;
+							  }
+
+								&::-webkit-slider-thumb:before
+								{
+							    /* what creates the colorful line on the left side of the slider */
+							    top: ($slider-filter-thumb-size / 2) - ($range-track-height / 2);
+							    left: -2000px;
+							    width: 2000px;
+							    background: $slider-filter-line-active-bg;
+							    content: ' ';
+							  }
+							}
+						}
+					}
+
+					.number-input-filters
+					{
+						.row
+						{
+							padding: 0px;
+							margin: 0px;
+
+							.col
+							{
+								padding: 0px;
+								margin: 0px;
+							}
+						}
+
+						.number-input-row
+						{
+							padding: 13px 0px;
+							border-bottom: 1px solid $filter-group-border;
+
+							&:last-child
+							{
+								border: none;
+							}
+						}
+
+						.col.description-col
+						{
+							@include flex(0 0 55%);
+						}
+						.col.value-col
+						{
+							padding: 0px 6px;
+							@include flex(0 0 15%);
+							text-align: center;
+						}
+
+						.description-line
+						{
+							display: block;
+							color: $number-filters-color;
+							font-size: 14px;
+	  					line-height: 30px;
+						}
+
+						.input-quantity
+						{
+							font-weight: 500;
+							line-height: 30px;
+							color: $number-filters-quantity-color;
+						}
+
+						.col.input-col
+						{
+							@include flex(0 0 30%);
+
+							.input-number
+							{
+								color: $number-filters-color;
+
+								.button
+								{
+									color: $number-filters-color;
+									border-color: $number-filters-color;
+									background-color: $number-filters-bg;
+									&:first-child
+									{
+										&::after
+										{
+										  border-right-color: $number-filters-color;
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+
+				.alt-filter-group
+				{
+					padding-bottom: 0px;
+
+					.item-divider
+					{
+						margin: 0px;
+						padding: 0px 17px 12px;
+						border-color: $filter-group-alt-divider-border;
+					}
+
+					.filter-options-container
+					{
+						display: block;
+						margin: 0px;
+						padding: 0px 15px 5px;
+						background-color: $filter-group-alt-bg;
+
+						.list
+						{
+							background-color: $filter-group-alt-bg;
+
+							.item-radio,
+							.item-checkbox
+							{
+								background-color: $filter-group-alt-bg;
+								color: $filter-group-color;
+								border-color: $filter-group-alt-border;
+							}
+						}
+					}
+				}
+
+				.range-filter-group
+				{
+					padding-bottom: 10px;
+
+					.item-divider
+					{
+						border: none;
+						padding-bottom: 5px;
+					}
+
+					.item.range
+					{
+						border: none;
+					}
+				}
+			}
+		}
+	}
+}

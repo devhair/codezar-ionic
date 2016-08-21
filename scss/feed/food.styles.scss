@@ -1,0 +1,233 @@
+.feed-food-view,
+.search-results-container
+{
+	.products-row
+	{
+		padding: 0px $food-products-outer-padding;
+		margin: 0px;
+
+		.food-product-container
+		{
+			border-bottom: 2px solid $food-product-divider-color;
+			margin: 0px 0px 3px 0px;
+  		padding: 12px 0px;
+
+			&:last-child
+			{
+				border-bottom: none;
+				margin-bottom: 0px;
+			}
+
+			.row
+			{
+				padding: 0px;
+				margin: 0px;
+
+				.col
+				{
+					padding: 0px;
+					margin: 0px;
+				}
+			}
+
+			.product-anchor
+			{
+				text-decoration: none;
+			}
+
+			.row.info-row
+			{
+				padding: 0px 2px 12px 2px;
+			}
+
+			.col.logo-col
+			{
+				max-width: 58px;
+
+				.product-anchor
+				{
+					display: block;
+				}
+
+				.pre-img
+				{
+					border-radius: 0px;
+				}
+
+				@include spinner-size(20px, 20px);
+
+				.logo-image
+				{
+					width: 100%;
+				}
+			}
+
+			.col.description-col
+			{
+				padding-left: 12px;
+
+				.product-title
+				{
+					margin: 2px 0px 0px 0px;
+
+					a
+					{
+						color: $food-product-color;
+					}
+				}
+
+				.address-and-price-container
+				{
+					margin: 4px 0px 0px 0px;
+					overflow: hidden;
+  				height: 16px;
+  				line-height: 16px;
+
+					.product-address
+					{
+						color: $food-product-alternative-color;
+						font-size: 12px;
+						@include calc(max-width, "100% - #{($food-product-price-width*5)}");
+						display: inline-block;
+						overflow: hidden;
+						height: 100%;
+						text-overflow: ellipsis;
+						white-space: nowrap;
+						float: left;
+						padding-right: 8px;
+					}
+
+					.product-price-range
+					{
+						color: $food-product-price-color;
+						font-size: 11px;
+						width: $food-product-price-width;
+						display: inline-block;
+						text-align: center;
+						float: left;
+					}
+				}
+
+				.product-tags-container
+				{
+					margin: 4px 0px 0px 0px;
+  				height: 16px;
+  				line-height: 16px;
+					@include display(inline-flex);
+
+					.product-tag
+					{
+						border-radius: 2px;
+						border: 1px solid $food-product-alternative-color;
+						padding: 0px 3px;
+						margin-right: 6px;
+						font-size: 10px;
+						color: $food-product-alternative-color;
+						line-height: 12px;
+
+						&:last-child
+						{
+							margin-right: 0px;
+						}
+					}
+				}
+			}
+
+			.col.actions-col
+			{
+				padding-left: 12px;
+
+				.product-rating
+				{
+					color: $food-product-rating-color;
+					border-radius: 2px;
+					padding: 0px 4px;
+				  font-size: 12px;
+				  font-weight: 600;
+				  width: 100%;
+				  display: block;
+				  text-align: center;
+
+					&.rating-1
+					{
+						background-color: $food-product-rating-1-bg;
+					}
+					&.rating-2
+					{
+						background-color: $food-product-rating-2-bg;
+					}
+					&.rating-3
+					{
+						background-color: $food-product-rating-3-bg;
+					}
+					&.rating-4
+					{
+						background-color: $food-product-rating-4-bg;
+					}
+					&.rating-5
+					{
+						background-color: $food-product-rating-5-bg;
+					}
+				}
+			}
+
+			.images-row
+			{
+				margin: 0px ($food-product-images-padding/2);
+
+				.image-wrapper
+				{
+					position: relative;
+					padding-right: $food-product-images-padding;
+
+					&:last-child
+					{
+						margin-right: -$food-product-images-padding;
+					}
+
+					.pre-img
+					{
+						border-radius: 0px;
+					}
+
+					@include spinner-size(20px, 20px);
+
+					.product-image
+					{
+						width: 100%;
+					}
+
+					.has-more-images
+					{
+						position: absolute;
+						top: 0px;
+						bottom: 0px;
+						left: 0px;
+						right: 0px;
+						margin-right: $food-product-images-padding;
+						background-color: rgba($food-product-images-overlay-bg, .5);
+						@include display(flex);
+						@include align-items(center);
+						@include justify-content(center);
+
+						.images-count
+						{
+							font-size: 22px;
+							color: $food-product-images-overlay-color;
+							font-weight: 600;
+
+							&::before
+							{
+								content: '+';
+								font-size: 26px;
+								color: $food-product-images-overlay-color;
+								font-weight: 600;
+							}
+						}
+					}
+				}
+			}
+
+		}
+	}
+}

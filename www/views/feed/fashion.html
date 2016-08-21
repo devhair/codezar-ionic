@@ -1,0 +1,29 @@
+<ion-view class="feed-fashion-view feed-sub-view" cache-view="false">
+  <ion-content>
+    <section ng-include="'views/common/sort-and-filters-bar.html'"></section>
+    <div class="row products-row">
+      <div class="col col-50 fashion-product-container" ng-repeat="product in results = products">
+        <div class="list card">
+          <div class="item item-image product-image-wrapper">
+            <a class="product-anchor" ui-sref="main.app.feed.fashion.content({productId: product.id})">
+              <pre-img ratio="_3_4">
+                <img class="product-image" ng-src="{{ product.image }}" spinner-on-load>
+              </pre-img>
+            </a>
+          </div>
+          <div class="item item-body product-description-wrapper">
+            <h5 class="product-title">
+              <a class="product-anchor" ui-sref="main.app.feed.fashion.content({productId: product.id})">
+                {{ product.name }}
+              </a>
+            </h5>
+            <p class="product-description">
+              <b class="actual-price">${{product.price_sale}}</b>
+              <span class="previous-price" ng-show="product.price != '0'">${{product.price}}</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

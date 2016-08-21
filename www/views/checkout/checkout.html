@@ -1,0 +1,114 @@
+<ion-view class="checkout-view" cache-view="false">
+  <ion-header-bar class="checkout-header">
+    <div class="buttons">
+      <button class="button button-clear cancel-button" ng-click="cancel()">Cancel</button>
+    </div>
+    <h1 class="title">Checkout</h1>
+  </ion-header-bar>
+  <ion-content has-bouncing="false" class="checkout-content">
+    <div class="row order-brief-row">
+      <div class="col col-67">
+        <div class="row illustration-row">
+          <div class="col illustration-col">
+            <img class="order-brief-illustration" ng-src="./img/checkout/checkout_illustration.png"/>
+          </div>
+          <div class="col">
+            <span class="order-brief-callout">{{products.length}} {{ products.length === 1 ? 'item' : 'items' }} ready</span>
+          </div>
+        </div>
+      </div>
+      <div class="col col-33 col-center order-total-col">
+        <div class="order-total-wrapper">
+          <span class="brief-total-title">Total:</span>
+          <span class="brief-total">${{ getTotal() | number:2 }}</span>
+        </div>
+      </div>
+    </div>
+    <div class="row address-row">
+      <div class="col">
+        <div class="address-chooser">
+          <a class="button button-block icon-right ion-chevron-right choose-addresses-button" ng-class="{'aa': addresses_popover.isShown(), 'bb' : !addresses_popover.isShown()}" ui-sref="main.app.checkout.address()">{{getSelectedAddress() || 'Shipping Address'}}</a>
+        </div>
+      </div>
+    </div>
+    <h3 class="checkout-sub-title">Payment Information</h3>
+    <div class="row promo-code-row">
+      <div class="col">
+        <label class="item item-input promo-item">
+          <span class="input-label">Promo Code</span>
+          <input type="text">
+        </label>
+      </div>
+    </div>
+    <div class="row card-row">
+      <div class="col">
+        <div class="address-chooser">
+          <a class="button button-block icon-right ion-chevron-right choose-card-button" ng-class="{'aa': addresses_popover.isShown(), 'bb' : !addresses_popover.isShown()}" ui-sref="main.app.checkout.card()">{{getSelectedCard() || 'Credit Card'}}</a>
+        </div>
+      </div>
+    </div>
+    <h3 class="checkout-sub-title">Your Order</h3>
+    <ul class="list checkout-products">
+      <li class="item checkout-product" ng-repeat="product in products">
+        <div class="row">
+          <div class="col col-20 product-image-col">
+            <div class="product-image-container" multi-bg="[product.square_image]"></div>
+          </div>
+          <div class="col col-50 col-center">
+            <span class="product-name">{{product.name}}</span>
+          </div>
+          <div class="col col-center">
+            <span class="product-price">${{product.price}}</span>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <ul class="list checkout-bill">
+      <li class="item">
+        <div class="row">
+          <div class="col">
+            <span class="bill-item-title">Price Subtotal</span>
+          </div>
+          <div class="col">
+            <span class="bill-item-value">${{ getSubtotal() | number:2 }}</span>
+          </div>
+        </div>
+      </li>
+      <li class="item">
+        <div class="row">
+          <div class="col">
+            <span class="bill-item-title">Estimated Taxes</span>
+          </div>
+          <div class="col">
+            <span class="bill-item-value">${{ getTax() | number:2 }}</span>
+          </div>
+        </div>
+      </li>
+      <li class="item">
+        <div class="row">
+          <div class="col">
+            <span class="bill-item-title">Shipping</span>
+          </div>
+          <div class="col">
+            <span class="bill-item-value">FREE</span>
+          </div>
+        </div>
+      </li>
+      <li class="item bill-total">
+        <div class="row">
+          <div class="col">
+            <span class="bill-item-title">Order Total</span>
+          </div>
+          <div class="col">
+            <span class="bill-item-value">${{ getTotal() | number:2 }}</span>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </ion-content>
+  <ion-footer-bar class="checkout-footer">
+    <a class="button button-full place-order-button" ui-sref="main.app.checkout.thanks()">
+      Place Order
+    </a>
+  </ion-footer-bar>
+</ion-view>

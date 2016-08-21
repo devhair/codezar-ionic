@@ -1,0 +1,131 @@
+$address-popup-button-bg: #ff984c;
+$address-popup-button-delete-bg: #e33e30;
+$address-popup-button-color: #FFF;
+$address-popup-bg: #FFF;
+$address-popup-color: #4d301c;
+$address-popup-border: #4d301c;
+
+$checkout-order-brief-bg: #ecd5cb;
+$checkout-order-brief-color: #4d301c;
+$checkout-order-brief-height: 55px;
+$checkout-order-brief-callout-bg: #ff984c;
+$checkout-order-brief-callout-color: #FFF;
+$checkout-order-brief-callout-height: 31px;
+
+$checkout-promo-code-bg: #fff7f4;
+$checkout-promo-code-label-bg: #FFF;
+$checkout-promo-code-border: #ecd5cb;
+
+$checkout-products-border: #4d301c;
+$checkout-products-bg: #FFF;
+
+$checkout-bg: #ffe6dc;
+$checkout-color: #4d301c;
+$checkout-header-bg: #4d301c;
+$checkout-header-color: #FFF;
+
+$addresses-popover-button-bg: #FFF;
+$addresses-popover-button-border: rgba($addresses-popover-button-bg, 0);
+$addresses-popover-button-active-bg: $addresses-popover-button-bg;
+$addresses-popover-button-active-border: $addresses-popover-button-border;
+$addresses-popover-button-color: #4d301c;
+
+$addresses-popover-bg: #fff7f4;
+$addresses-popover-border: #ecd5cb;
+
+$addresses-popover-item-border: #ffe6dc;
+$addresses-popover-item-color: #4d301c;
+$addresses-popover-item-bg: #fff7f4;
+$addresses-popover-item-alt-option-bg: #ecd5cb;
+$addresses-popover-item-edit-color: #ff984c;
+$addresses-popover-item-height: 55px;
+
+$addresses-popover-inset-button-bg: #ff984c;
+$addresses-popover-inset-button-active-bg: #ff984c;
+$addresses-popover-inset-button-border: rgba($addresses-popover-button-bg,0);
+$addresses-popover-inset-button-active-border: rgba($addresses-popover-button-bg,0);
+$addresses-popover-inset-button-color: #FFF;
+
+$address-details-bg: #ecd5cb;
+$address-details-color: #4d301c;
+$address-details-border: #4d301c;
+
+$billing-option-bg: #ecd5cb;
+$billing-option-checked-bg: #4d301c;
+
+$save-address-button-height: 65px;
+$save-address-button-bg:              #FF984C !default;
+$save-address-button-text:            #FFF !default;
+$save-address-button-border:          darken($save-address-button-bg, 10%) !default;
+$save-address-button-active-bg:       darken($save-address-button-bg, 10%) !default;
+$save-address-button-active-border:   darken($save-address-button-bg, 10%) !default;
+
+
+$checkout-popup-bg: #FFF;
+
+
+$cards-popover-button-bg: #FFF;
+$cards-popover-button-border: rgba($cards-popover-button-bg, 0);
+$cards-popover-button-active-bg: $cards-popover-button-bg;
+$cards-popover-button-active-border: $cards-popover-button-border;
+$cards-popover-button-color: #4d301c;
+
+$cards-popover-bg: #fff7f4;
+$cards-popover-border: #ecd5cb;
+
+$cards-popover-item-border: #ffe6dc;
+$cards-popover-item-color: #4d301c;
+$cards-popover-item-bg: #fff7f4;
+$cards-popover-item-alt-option-bg: #ecd5cb;
+$cards-popover-item-edit-color: #ff984c;
+$cards-popover-item-height: 55px;
+
+$cards-popover-inset-button-bg: #ff984c;
+$cards-popover-inset-button-active-bg: #ff984c;
+$cards-popover-inset-button-border: rgba($cards-popover-button-bg,0);
+$cards-popover-inset-button-active-border: rgba($cards-popover-button-bg,0);
+$cards-popover-inset-button-color: #FFF;
+
+$card-details-bg: #ecd5cb;
+$card-details-color: #4d301c;
+$card-details-border: #4d301c;
+
+$save-card-button-height: 65px;
+$save-card-button-bg:              #FF984C !default;
+$save-card-button-text:            #FFF !default;
+$save-card-button-border:          darken($save-card-button-bg, 10%) !default;
+$save-card-button-active-bg:       darken($save-card-button-bg, 10%) !default;
+$save-card-button-active-border:   darken($save-card-button-bg, 10%) !default;
+
+$new-card-button-bg: #ff984c;
+$new-card-button-border: rgba($new-card-button-bg, 0);
+$new-card-button-active-bg: $new-card-button-bg;
+$new-card-button-active-border: $new-card-button-border;
+$new-card-button-color: #FFF;
+
+$new-address-button-bg: #ff984c;
+$new-address-button-border: rgba($new-address-button-bg, 0);
+$new-address-button-active-bg: $new-address-button-bg;
+$new-address-button-active-border: $new-address-button-border;
+$new-address-button-color: #FFF;
+
+$checkout-thanks-bg: #ffe6dc;
+$checkout-thanks-color: #4d301c;
+$checkout-thanks-header-bg: #4d301c;
+$checkout-thanks-header-color: #FFF;
+$checkout-thanks-title-color: #4d301c;
+$checkout-thanks-button-height: 60px;
+
+$checkout-thanks-button-bg:              #FF984C !default;
+$checkout-thanks-button-text:            #FFF !default;
+$checkout-thanks-button-border:          darken($checkout-thanks-button-bg, 10%) !default;
+$checkout-thanks-button-active-bg:       darken($checkout-thanks-button-bg, 10%) !default;
+$checkout-thanks-button-active-border:   darken($checkout-thanks-button-bg, 10%) !default;
+
+$checkout-thanks-illustration-ratio: 41 22;
+
+$pre-img-ratios: append($pre-img-ratios, $checkout-thanks-illustration-ratio);
+
+$card-illustration-ratio: 37 26;
+
+$pre-img-ratios: append($pre-img-ratios, $card-illustration-ratio);

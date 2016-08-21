@@ -1,0 +1,35 @@
+<ion-view class="feed-real-state-view feed-sub-view" cache-view="false">
+  <ion-content>
+    <section ng-include="'views/common/sort-and-filters-bar.html'"></section>
+    <div class="products-row list">
+      <div class="item item-divider">
+        San Francisco, CA
+      </div>
+      <div class="real-state-product-container" ng-repeat="product in results = products">
+        <div class="row image-row">
+          <div class="col product-image-container">
+            <div multi-bg="[product.picture]" interval="3000">
+            </div>
+          </div>
+        </div>
+        <div class="row description-row">
+          <div class="col">
+            <h2 class="product-price">
+              <a class="product-anchor">$ {{product.price}}</a>
+              <!-- <a class="product-anchor" ui-sref="main.app.feed.real-state.content({productId: product.id})">$ {{product.price}}</a> -->
+            </h2>
+            <p class="product-address">
+              {{product.address}}
+            </p>
+          </div>
+          <div class="col col-33 amenities-col">
+            <i class="theme-icon icon-bed"></i>
+            <span>{{product.bedrooms}}</span>
+            <i class="theme-icon icon-toilet"></i>
+            <span>{{product.bathrooms}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

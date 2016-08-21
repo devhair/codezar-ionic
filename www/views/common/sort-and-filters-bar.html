@@ -1,0 +1,11 @@
+<div class="row sort-and-filters-row">
+	<div class="col col-25 col-center" ng-controller="SortCtrl">
+		<a class="button button-block button-clear icon-left sort-icon button-small sort-button" ng-click="openSort()">Sort</a>
+	</div>
+	<div class="col col-50 col-center">
+		<h4 class="results-count-title">{{results.length}} Results</span>
+	</div>
+	<div class="col col-25 col-center">
+		<a class="button button-block button-clear icon-left filter-icon button-small filter-button" ui-sref="main.app.filters()">Filter</a>
+	</div>
+</div>

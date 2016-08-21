@@ -1,0 +1,380 @@
+.fashion-content-view
+{
+	background-color: $fashion-content-bg;
+
+	.fashion-content-header
+	{
+		background-color: $fashion-content-header-bg !important;
+		background: $fashion-content-header-bg !important;
+		border: none !important;
+		background-size: 0px !important; // To remove bottom border on header
+
+		.title
+		{
+			color: $fashion-content-header-color;
+			font-weight: 300;
+		}
+
+		.back-button,
+		.share-button
+		{
+			color: $fashion-content-header-color;
+			font-weight: 500;
+		}
+	}
+
+	.product-images-slider
+	{
+		height: $fashion-content-images-slider-height + $fashion-content-images-slider-padding;
+		padding-bottom: $fashion-content-images-slider-padding;// For the slider pager
+
+		.image-container
+		{
+			height: 100%;
+
+			.pre-img.full
+			{
+				padding: 0px;
+				height: 100%;
+				width: 100%;
+				@include display(flex);
+				@include align-items(center);
+				@include justify-content(center);
+
+				ng-transclude
+				{
+					height: 100%;
+				}
+			}
+
+			.product-image
+			{
+				height: $fashion-content-images-slider-height;
+				position: initial;
+			}
+
+			&.multi-bg-outer
+			{
+				background-color: $fashion-content-multi-bg;
+
+				.bg-overlay
+				{
+					opacity: 0;
+				}
+			}
+		}
+
+		.slider-pager
+		{
+			bottom: 0px;
+			margin: (($fashion-content-images-slider-padding - 15px)/2) 0px;
+
+			.slider-pager-page
+			{
+				background-color: $fashion-content-images-slider-pager-bg;
+				border: 1px solid $fashion-content-images-slider-pager-color;
+				border-radius: 50%;
+				width: 10px;
+				height: 10px;
+				margin: -1px 5px 0px;
+				opacity: 0.8;
+
+				&.active
+				{
+					background-color: $fashion-content-images-slider-pager-color;
+					opacity: 1;
+				}
+
+				.icon
+				{
+					display: none;
+				}
+			}
+		}
+	}
+
+	.brief-info-row
+	{
+		padding: 22px 18px 12px;
+
+		.col
+		{
+			padding: 0px;
+		}
+
+		.product-name
+		{
+			color: $fashion-content-color;
+			font-size: 18px;
+			font-weight: 500;
+			margin: 0px;
+			line-height: 28px;
+		}
+
+		.product-store
+		{
+			text-transform: uppercase;
+			color: $fashion-content-store-color;
+			font-size: 15px;
+			font-weight: 400;
+			margin: 0px;
+			line-height: 21px;
+		}
+
+		.product-price
+		{
+			color: $fashion-content-color;
+			font-size: 18px;
+			font-weight: 500;
+			margin: 0px;
+			line-height: 28px;
+		}
+	}
+
+	.options-row
+	{
+		margin: 0px;
+		padding: 12px 18px;
+
+		.col
+		{
+			padding: 0px;
+		}
+
+		.pick-color-col
+		{
+			padding-right: 9px;
+		}
+		.pick-size-col
+		{
+			padding-left: 9px;
+		}
+
+		.pick-color-button,
+		.pick-size-button
+		{
+			text-align: left;
+			color: $fashion-content-color;
+			background-color: $fashion-content-options-buttons-bg;
+			border-radius: 0px;
+			margin: 0px;
+
+			&::before
+			{
+				color: $fashion-content-color;
+			}
+		}
+	}
+
+	.purchase-row
+	{
+		margin: 0px;
+		padding: 12px 30px;
+
+		.col
+		{
+			padding: 0px;
+		}
+
+		.add-to-cart-button
+		{
+			margin: 0px;
+			text-align: center;
+			min-height: 0px;
+			height: 36px;
+			line-height: 30px;
+			border-radius: 18px;
+			color: $fashion-content-purchase-button-color;
+			background-color: $fashion-content-purchase-button-bg;
+			font-size: 18px;
+			font-weight: 400;
+		}
+	}
+
+	.description-row
+	{
+		margin: 0px;
+		padding: 12px 18px;
+
+		.col
+		{
+			padding: 0px;
+		}
+
+		.description-title
+		{
+			color: $fashion-content-color;
+			font-size: 16px;
+			font-weight: 400;
+		}
+		.description-paragraph
+		{
+			color: $fashion-content-description-color;
+
+			& + .description-title
+			{
+				margin-top: 35px;
+			}
+		}
+	}
+
+	.suggested-title
+	{
+		text-transform: uppercase;
+		color: $fashion-content-description-color;
+		font-size: 18px;
+		font-weight: 500;
+		text-align: center;
+		padding: 12px 18px;
+	}
+
+	.suggested-products-row
+	{
+		margin: 0px;
+		padding: 0px 18px 12px;
+
+		.col
+		{
+			padding: 0px;
+		}
+
+		.fashion-product-container
+		{
+			.product-anchor
+			{
+				text-decoration: none;
+			}
+
+			.card
+			{
+				margin: 0px 10px;
+				border-radius: 0px;
+				box-shadow: none;
+
+				.product-image-wrapper
+				{
+					.pre-img
+					{
+						border-radius: 0px;
+					}
+
+					.product-image
+					{
+						width: 100%;
+					}
+				}
+
+				.product-description-wrapper
+				{
+					padding: 5px 0px;
+					text-align: center;
+
+					.product-title
+					{
+						margin: 0px;
+						text-overflow: ellipsis;
+						white-space: nowrap;
+						overflow: hidden;
+						font-size: 13px;
+						font-weight: 400;
+						a
+						{
+							color: $fashion-content-color;
+						}
+					}
+
+					.product-description
+					{
+						color: $fashion-content-color;
+						font-size: 15px;
+						margin: 2px 0px 0px;
+						text-overflow: ellipsis;
+						white-space: nowrap;
+						overflow: hidden;
+
+						.actual-price
+						{
+							font-weight: 500;
+						}
+					}
+				}
+
+				.item
+				{
+					border: none;
+
+					&:first-child,
+					&:last-child
+					{
+						border-radius: 0px;
+					}
+				}
+			}
+		}
+	}
+}
+
+.popup-outer.color-chooser-view,
+.popup-outer.size-chooser-view
+{
+  .popup-head
+  {
+		background-color: $fashion-content-popup-header-bg;
+  }
+
+  .popup-title
+  {
+    color: $fashion-content-popup-header-color;
+  }
+
+  .popup-buttons
+  {
+    .close-popup
+    {
+      background-color: $fashion-content-popup-header-bg;
+      color: $fashion-content-popup-header-color;
+    }
+  }
+}
+
+.color-chooser-view,
+.size-chooser-view
+{
+	.color-options-list,
+	.size-options-list
+	{
+		.list
+		{
+			padding: 0px;
+
+			.item
+			{
+				border: none;
+				margin: 0px;
+				border-bottom: 1px solid $fashion-content-popup-options-border;
+				color: $fashion-content-popup-options-color;
+				font-weight: 500;
+
+				&:last-child
+				{
+					border: none;
+				}
+
+				&.item-radio
+				{
+					input
+					{
+						&:checked + .radio-content .item-content {
+					    background: $fashion-content-popup-options-bg;
+					  }
+					}
+
+					.radio-icon
+					{
+						color: $fashion-content-popup-options-check-default-color;
+					}
+				}
+			}
+		}
+	}
+}

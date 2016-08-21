@@ -1,0 +1,41 @@
+<ion-view class="filters-view" cache-view="false">
+  <ion-header-bar class="filters-header">
+    <div class="buttons">
+      <button class="button button-clear cancel-button" ng-click="cancelRefine()">Cancel</button>
+    </div>
+    <h1 class="title">Filters</h1>
+    <div class="buttons">
+      <button class="button button-clear apply-button" ng-click="applyRefine()">Apply</button>
+    </div>
+  </ion-header-bar>
+  <ion-content class="filters-content-outer">
+    <div class="filter-tabs button-bar" filter-tabs slider="filter-tabs-slider">
+      <filter-tab tab="1">
+        <span class="tab-title">Feed</span>
+      </filter-tab>
+      <filter-tab tab="2">
+        <span class="tab-title">Lists</span>
+      </filter-tab>
+      <filter-tab tab="3">
+        <span class="tab-title">Range</span>
+      </filter-tab>
+      <filter-tab tab="4">
+        <span class="tab-title">Other</span>
+      </filter-tab>
+    </div>
+    <ion-slide-box class="filter-tabs-slider" ng-init="lockSlide()" delegate-handle="filter-tabs-slider" show-pager="false">
+      <ion-slide>
+        <section class="filter-tab-section" ng-include="'views/filters/tab-1.html'"></section>
+      </ion-slide>
+      <ion-slide>
+        <section class="filter-tab-section" ng-include="'views/filters/tab-2.html'"></section>
+      </ion-slide>
+      <ion-slide>
+        <section class="filter-tab-section" ng-include="'views/filters/tab-3.html'"></section>
+      </ion-slide>
+      <ion-slide>
+        <section class="filter-tab-section" ng-include="'views/filters/tab-4.html'"></section>
+      </ion-slide>
+    </ion-slide-box>
+  </ion-content>
+</ion-view>

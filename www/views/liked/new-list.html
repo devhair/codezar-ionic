@@ -1,0 +1,31 @@
+<ion-view class="liked-view" cache-view="false">
+  <ion-header-bar align-title="left" class="bar-positive">
+    <div class="buttons">
+      <button class="button" ng-click="cancel()">Cancel</button>
+    </div>
+    <h1 class="title">New List</h1>
+    <div class="buttons">
+      <button class="button" ng-click="create()">Create</button>
+    </div>
+  </ion-header-bar>
+  <ion-content class="padding">
+    <div class="list list-inset">
+      <label class="item item-input">
+        <input type="text" placeholder="Name">
+      </label>
+      <label class="item item-input">
+        <input type="text" placeholder="Tags">
+      </label>
+      <label class="item item-input item-select">
+        <div class="input-label">
+          Category
+        </div>
+        <select>
+          <option>Blue</option>
+          <option selected>Green</option>
+          <option>Red</option>
+        </select>
+      </label>
+    </div>
+  </ion-content>
+</ion-view>

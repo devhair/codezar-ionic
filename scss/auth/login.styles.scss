@@ -1,0 +1,39 @@
+.login-view
+{
+	.images-row
+	{
+		padding-top: 0px;
+		height: 27%;
+
+		.illustration-container
+		{
+			margin: 0px auto;
+			width: 50vw;
+		}
+	}
+
+	.form-row
+	{
+		height: 73%;
+	}
+
+	.facebook-button
+	{
+		margin-top: 6vh;
+	}
+
+	.form-divider
+	{
+		margin: 5vh 0px;
+	}
+
+	.auth-action-button
+	{
+		margin-top: 2vh;
+	}
+
+	.alternative-actions
+	{
+		margin-top: 1vh;
+	}
+}

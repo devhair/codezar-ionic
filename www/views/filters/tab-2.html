@@ -1,0 +1,27 @@
+<ion-scroll direction="y" ng-controller="FiltersCtrl">
+	<div class="card list filter-group alt-filter-group">
+    <div class="item item-divider">
+      Ingredients
+    </div>
+    <ion-list class="ingredients-filters filter-options-container">
+      <ion-checkbox ng-model="ingredients_filter.salmon">Salmon</ion-checkbox>
+      <ion-checkbox ng-model="ingredients_filter.butter">Butter</ion-checkbox>
+      <ion-checkbox ng-model="ingredients_filter.rice">Rice</ion-checkbox>
+      <ion-checkbox ng-model="ingredients_filter.tomato">Tomato</ion-checkbox>
+      <ion-checkbox ng-model="ingredients_filter.lemon">Lemon</ion-checkbox>
+      <ion-checkbox ng-model="ingredients_filter.olive_oil">Olive Oil</ion-checkbox>
+    </ion-list>
+  </div>
+
+  <div class="card list filter-group alt-filter-group">
+    <div class="item item-divider">
+      Show only
+    </div>
+    <ion-list class="show-filters filter-options-container">
+      <ion-radio name="show_filter" ng-model="show_filter" ng-value="'Restaurants'">Restaurants</ion-radio>
+      <ion-radio name="show_filter" ng-model="show_filter" ng-value="'Cafes'">Cafes</ion-radio>
+      <ion-radio name="show_filter" ng-model="show_filter" ng-value="'Bars'">Bars</ion-radio>
+      <ion-radio name="show_filter" ng-model="show_filter" ng-value="'Clubs'">Clubs</ion-radio>
+    </ion-list>
+  </div>
+</ion-scroll>

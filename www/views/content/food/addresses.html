@@ -1,0 +1,13 @@
+<div class="list addresses-list">
+  <div class="address-item row row-center" ng-repeat="address in addresses">
+    <label class="col item item-radio">
+      <input type="radio" name="pick_address" ng-model="selected_address" ng-value="address" ng-change="selectAddress(address)">
+      <div class="radio-content">
+        <div class="item-content disable-pointer-events">
+          <span class="address-name">{{address.street}}</span>
+        </div>
+        <i class="radio-icon disable-pointer-events icon ion-checkmark"></i>
+      </div>
+    </label>
+  </div>
+</div>

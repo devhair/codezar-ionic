@@ -1,0 +1,34 @@
+// WELCOME
+$welcome-bg: #FFE6DC;
+$welcome-color: #4D301C;
+$welcome-top-padding: 45px;
+
+$get-started-button-height: 60px;
+$get-started-button-bg:              $welcome-color !default;
+$get-started-button-text:            #FFF !default;
+$get-started-button-border:          darken($welcome-color, 10%) !default;
+$get-started-button-active-bg:       darken($welcome-color, 10%) !default;
+$get-started-button-active-border:   darken($welcome-color, 10%) !default;
+
+$auth-button-text: $welcome-color;
+
+$welcome-logo-ratio: 1 1;
+$welcome-illustration-ratio: 20 9;
+
+$pre-img-ratios: append($pre-img-ratios, $welcome-logo-ratio);
+$pre-img-ratios: append($pre-img-ratios, $welcome-illustration-ratio);
+
+// LEARN
+$learn-bg: #FFE6DC;
+$learn-color: #4D301C;
+$learn-actions-height: 65px;
+
+$learn-action-button-bg:              #FF984C !default;
+$learn-action-button-text:            #FFF !default;
+$learn-action-button-border:          darken($learn-action-button-bg, 10%) !default;
+$learn-action-button-active-bg:       darken($learn-action-button-bg, 10%) !default;
+$learn-action-button-active-border:   darken($learn-action-button-bg, 10%) !default;
+
+$learn-illustration-ratio: 21 13;
+
+$pre-img-ratios: append($pre-img-ratios, $learn-illustration-ratio);

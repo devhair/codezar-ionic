@@ -1,0 +1,57 @@
+.search-view
+{
+	background-color: $search-bg;
+
+	.search-header
+	{
+		background-color: $search-header-bg !important;
+		background: $search-header-bg !important;
+		border: none !important;
+		background-size: 0px !important; // To remove bottom border on header
+
+		.row
+		{
+			padding: 0px;
+
+			.col
+			{
+				padding: 0px;
+			}
+		}
+
+		.search-row
+		{
+			padding: 3px 10px;
+
+			.search-label
+			{
+				background-color: $search-header-search-bg;
+				color: $search-header-search-color;
+			  border-radius: 6px;
+
+				.icon.ion-ios-search
+				{
+					&::before
+					{
+						color: $search-header-search-icons-color;
+						font-size: 24px;
+					}
+				}
+
+				input
+				{
+					color: $search-header-search-color;
+					font-size: 16px;
+  				font-weight: 300;
+				}
+			}
+
+			.cancel-button
+			{
+				color: $search-header-color;
+				font-weight: 500;
+				float: right;
+			}
+		}
+	}
+}

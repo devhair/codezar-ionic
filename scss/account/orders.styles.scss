@@ -1,0 +1,161 @@
+.account-orders-view
+{
+  .orders-row
+  {
+    padding: 5px 15px 15px;
+
+    .order-item
+    {
+      margin: 0px 0px 15px;
+      padding: 0px;
+			box-shadow: none;
+			border-radius: 6px;
+    }
+
+    &:last-child
+    {
+      margin-bottom: 0px;
+    }
+
+    .item:first-child
+    {
+      border-top-left-radius: 6px;
+      border-top-right-radius: 6px;
+    }
+    .item:last-child
+    {
+      border-bottom-left-radius: 6px;
+      border-bottom-right-radius: 6px;
+    }
+
+    .order-header
+    {
+      background-color: $account-orders-header-bg;
+      border: none;
+      margin: 0px;
+      color: $account-orders-header-color;
+      min-height: 0px;
+      height: 25px;
+      line-height: 21px;
+      padding: 0px 15px;
+
+      .header-title
+      {
+        text-transform: uppercase;
+        font-size: 11px;
+        font-weight: 600;
+      }
+    }
+
+    .order-content
+    {
+      background-color: $account-orders-bg;
+      color: $account-color;
+      border: none;
+      margin: 0px;
+      padding: 5px 15px;
+
+      .row
+      {
+        padding: 0px;
+        margin: 0px;
+
+        .col
+        {
+          padding: 0px;
+          margin: 0px;
+        }
+      }
+
+      .order-product
+      {
+        border-bottom: 1px solid $account-orders-products-border;
+        padding: 0px 5px;
+
+        &:last-child
+        {
+          border: none;
+        }
+
+        .product-image-col
+				{
+          padding: 5px 0px;
+					.product-image-container
+					{
+						padding-bottom: 100%;
+
+						&.multi-bg-outer
+						{
+							background-color: $account-orders-product-pre-img-bg;
+
+              .spinner svg
+        	    {
+        	      position: absolute;
+        	    }
+
+							.bg-overlay
+							{
+								opacity: 0;
+							}
+						}
+					}
+				}
+
+        .name-col
+        {
+          @include flex(0 0 55%);
+          max-width: 55%;
+        }
+
+        .product-name
+        {
+          font-weight: 300;
+          display: block;
+          font-size: 14px;
+          padding-left: 5px;
+          word-break: break-all;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+
+        .product-price
+        {
+          float: right;
+          font-size: 15px;
+          font-weight: 300;
+        }
+      }
+    }
+
+    .order-footer
+    {
+      color: $account-orders-footer-color;
+      border: none;
+      text-align: center;
+      min-height: 0px;
+      height: 45px;
+      line-height: 41px;
+      padding: 0px 15px;
+
+      &.delivered
+      {
+        background-color: $account-orders-footer-delivered-bg;
+      }
+      &.shipped
+      {
+        background-color: $account-orders-footer-shipped-bg;
+      }
+      &.canceled
+      {
+        background-color: $account-orders-footer-canceled-bg;
+      }
+
+      .status-title
+      {
+        text-transform: capitalize;
+        font-size: 18px;
+      }
+    }
+  }
+}

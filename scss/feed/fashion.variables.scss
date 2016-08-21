@@ -1,0 +1,9 @@
+$fashion-products-outer-padding: 18px;
+$fashion-product-card-color: #000;
+$fashion-product-card-alternative-color: #4D301C;
+$fashion-product-card-bg: #faf2f0;
+
+$fashion-product-image-ratio: 3 4;
+
+// Merge maps
+$pre-img-ratios: append($pre-img-ratios, $fashion-product-image-ratio);

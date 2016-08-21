@@ -1,0 +1,32 @@
+$auth-bg: #FFE6DC;
+$auth-color: #4D301C;
+$auth-error-color: #FF0000;
+$auth-legal-bg: #FFF;
+$auth-top-padding: 45px;
+$auth-buttons-height: 60px;
+$auth-inputs-height: 45px;
+
+$auth-placeholder-color: #FF984C;
+$auth-password-icon-color: $auth-placeholder-color;
+
+$facebook-button-bg:              #3b5998 !default;
+$facebook-button-text:            #FFF !default;
+$facebook-button-border:          darken($facebook-button-bg, 10%) !default;
+$facebook-button-active-bg:       darken($facebook-button-bg, 10%) !default;
+$facebook-button-active-border:   darken($facebook-button-bg, 10%) !default;
+
+$auth-action-button-bg:              #FF984C !default;
+$auth-action-button-text:            #FFF !default;
+$auth-action-button-border:          darken($auth-action-button-bg, 10%) !default;
+$auth-action-button-active-bg:       darken($auth-action-button-bg, 10%) !default;
+$auth-action-button-active-border:   darken($auth-action-button-bg, 10%) !default;
+
+$auth-input-bg: #FFF;
+$auth-input-border: #DDD;
+$auth-input-text: $auth-color;
+
+$login-illustration-ratio: 17 9;
+$pre-img-ratios: append($pre-img-ratios, $login-illustration-ratio);
+
+$forgot-password-illustration-ratio: 27 20;
+$pre-img-ratios: append($pre-img-ratios, $forgot-password-illustration-ratio);

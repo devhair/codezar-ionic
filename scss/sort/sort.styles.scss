@@ -1,0 +1,115 @@
+.popup-outer
+{
+  .popup
+  {
+    border-radius: 6px;
+    background-color: $popup-bg;
+    width: 80%;
+    max-width: 260px;
+    position: relative;
+  }
+
+  .popup-head
+  {
+    padding: 13px $popup-padding;
+		background-color: $popup-header-default-bg;
+		border-radius: 6px 6px 0px 0px;
+		border: none;
+
+		@include popup-header-style($popup-header-fashion-bg, 'main-app-feed-fashion');
+		@include popup-header-style($popup-header-food-bg, 'main-app-feed-food');
+		@include popup-header-style($popup-header-travel-bg, 'main-app-feed-travel');
+		@include popup-header-style($popup-header-deals-bg, 'main-app-feed-deals');
+		@include popup-header-style($popup-header-real-state-bg, 'main-app-feed-real-state');
+  }
+
+  .popup-body
+  {
+    padding: 0px $popup-padding;
+  }
+
+  .popup-title
+  {
+    color: $popup-header-color;
+		text-align: left;
+    margin-top: -1px;
+		font-weight: 400;
+		line-height: 19px;
+  }
+
+  .popup-buttons
+  {
+    height: 0px;
+    min-height: 0px;
+    padding: 0px;
+
+    .close-popup
+    {
+			border-radius: 0px 6px 0px 0px;
+      top: 0px;
+      position: absolute;
+      right: 0px;
+      background-color: $popup-header-default-bg;
+      color: $popup-header-color;
+      border: none;
+      padding: 11px $popup-padding;
+      min-width: 0px;
+      min-height: 0px;
+      margin: 0px;
+      display: inline-block;
+      font-weight: 500;
+      font-size: 16px;
+
+      &.activated
+  		{
+  			box-shadow: none;
+  		}
+    }
+  }
+}
+
+.sort-view
+{
+	.sort-options-list
+	{
+		.list
+		{
+			padding: 0px;
+
+			.item
+			{
+				border: none;
+				margin: 0px;
+				border-bottom: 1px solid lighten($sort-options-check-default-color, 18%);
+				color: $sort-options-color;
+				font-weight: 500;
+
+				&:last-child
+				{
+					border: none;
+				}
+
+				&.item-radio
+				{
+					input
+					{
+						&:checked + .radio-content .item-content {
+					    background: $sort-options-bg;
+					  }
+					}
+
+					.radio-icon
+					{
+						color: $sort-options-check-default-color;
+					}
+				}
+
+				@include sort-options-style($sort-options-check-fashion-color, 'main-app-feed-fashion');
+				@include sort-options-style($sort-options-check-food-color, 'main-app-feed-food');
+				@include sort-options-style($sort-options-check-travel-color, 'main-app-feed-travel');
+				@include sort-options-style($sort-options-check-deals-color, 'main-app-feed-deals');
+				@include sort-options-style($sort-options-check-real-state-color, 'main-app-feed-real-state');
+			}
+		}
+	}
+}

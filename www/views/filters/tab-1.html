@@ -1,0 +1,46 @@
+<ion-scroll direction="y" ng-controller="FiltersCtrl">
+  <div class="card list filter-group">
+    <div class="item item-divider">
+      Category
+    </div>
+    <ion-list class="category-filters filter-options-container">
+      <ion-radio name="category_filter" ng-model="category_filter" ng-value="'Fashion'">
+        <img class="category-icon fashion-icon" ng-src="./img/filters/category-filters_Fashion.png"/>
+        <span>Fashion</span>
+      </ion-radio>
+      <ion-radio name="category_filter" ng-model="category_filter" ng-value="'RealState'">
+        <img class="category-icon real-state-icon" ng-src="./img/filters/category-filters_RealState.png"/>
+        <span>Real State</span>
+      </ion-radio>
+      <ion-radio name="category_filter" ng-model="category_filter" ng-value="'Travel'">
+        <img class="category-icon travel-icon" ng-src="./img/filters/category-filters_Travel.png"/>
+        <span>Travel</span>
+      </ion-radio>
+      <ion-radio name="category_filter" ng-model="category_filter" ng-value="'Food'">
+        <img class="category-icon food-icon" ng-src="./img/filters/category-filters_Food.png"/>
+        <span>Food</span>
+      </ion-radio>
+      <ion-radio name="category_filter" ng-model="category_filter" ng-value="'Deals'">
+        <img class="category-icon deals-icon" ng-src="./img/filters/category-filters_Deals.png"/>
+        <span>Deals</span>
+      </ion-radio>
+    </ion-list>
+  </div>
+
+  <div class="card list filter-group">
+    <div class="item item-divider">
+      Tags
+    </div>
+    <ion-list class="tags-filters filter-options-container">
+      <tag-checkbox ng-model="tags_filter.meat" title="Meat"></tag-checkbox>
+      <tag-checkbox ng-model="tags_filter.vegetables" title="Vegetables"></tag-checkbox>
+      <tag-checkbox ng-model="tags_filter.eggs" title="Eggs"></tag-checkbox>
+      <tag-checkbox ng-model="tags_filter.breakfast" title="Breakfast"></tag-checkbox>
+      <tag-checkbox ng-model="tags_filter.asian" title="Asian"></tag-checkbox>
+      <tag-checkbox ng-model="tags_filter.fruits" title="Fruits"></tag-checkbox>
+      <tag-checkbox ng-model="tags_filter.light" title="Light"></tag-checkbox>
+      <tag-checkbox ng-model="tags_filter.mexican" title="Mexican"></tag-checkbox>
+    </ion-list>
+  </div>
+  
+</ion-scroll>

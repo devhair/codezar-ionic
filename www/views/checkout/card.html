@@ -1,0 +1,40 @@
+<ion-view class="checkout-card-view" cache-view="false">
+  <ion-header-bar class="checkout-card-header">
+    <div class="buttons">
+      <button class="button button-clear cancel-button" ng-click="cancel()">Cancel</button>
+    </div>
+    <h1 class="title">Credit Card</h1>
+  </ion-header-bar>
+
+  <ion-content class="checkout-card-content" has-bouncing="false">
+    <div class="row everything-else-row">
+      <div class="col">
+        <div ng-if="user_credit_cards.length == 0">
+          <div class="new-card-button-outer">
+            <button class="button button-block new-card-button" ng-click="showNewCardPopup()">
+              New Credit Card
+            </button>
+          </div>
+        </div>
+        <div ng-if="user_credit_cards.length > 0">
+          <h3 class="credit-card-title">Select Credit Card</h3>
+          <div class="card-chooser" ng-click="openCardsPopover($event)">
+            <button class="button button-block icon-right cards-popover-button" ng-class="{'ion-chevron-up': cards_popover.isShown(), 'ion-chevron-down' : !cards_popover.isShown()}">
+              {{data.selected_card.number || 'Select Credit Card'}}
+            </button>
+          </div>
+        </div>
+        <div class="illustration-container">
+          <pre-img ratio="_37_26">
+            <img class="illustration-image" ng-src="./img/checkout/card_illustration.png" spinner-on-load/>
+          </pre-img>
+        </div>
+      </div>
+    </div>
+    <div class="row actions-row">
+      <div class="col">
+        <a class="button button-full action-button" ng-click="saveSelectedCreditCard(data.selected_card)">Save Card & Continue</a>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

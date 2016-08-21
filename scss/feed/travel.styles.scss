@@ -1,0 +1,139 @@
+.feed-travel-view
+{
+	.products-row
+	{
+		.travel-product-container
+		{
+			.row
+			{
+				padding: 0px;
+				margin: 0px;
+
+				.col
+				{
+					padding: 0px;
+					margin: 0px;
+				}
+			}
+
+			.product-anchor
+			{
+				text-decoration: none;
+			}
+
+			.product-image-container
+			{
+				height: 235px;
+
+				.content-inside-image
+				{
+					text-align: center;
+					padding: 0px 14%;
+					height: 100%;
+
+					.travel-product-icon
+					{
+						width: 34px;
+					}
+
+					.product-name
+					{
+						margin: 0px;
+						padding: 8px 0px;
+						color: $travel-product-color;
+						border-bottom: 2px solid $travel-product-color;
+						text-transform: uppercase;
+					  font-size: 20px;
+					  font-weight: 900;
+
+						a
+						{
+							color: $travel-product-color;
+						}
+					}
+
+					.product-tagline
+					{
+						color: $travel-product-color;
+						text-transform: uppercase;
+					  font-size: 16px;
+					  font-weight: 400;
+						font-style: italic;
+						margin: 12px 0px 0px 0px;
+					}
+				}
+			}
+
+			.info-row
+			{
+				padding: 23px 18px 28px;
+
+				.description-col
+				{
+					.product-title
+					{
+						color: $travel-product-description-color;
+						margin: 0px 0px 8px 0px;
+						text-transform: capitalize;
+
+						a
+						{
+							color: $travel-product-description-color;
+						}
+					}
+
+					.product-description
+					{
+						margin: 0px 0px 4px 0px;
+						color: $food-product-description-alternative-color;
+						line-height: 16px;
+						font-size: 12px;
+					}
+
+					.product-address
+					{
+						margin: 0px;
+						color: $food-product-description-alternative-color;
+						font-size: 10px;
+						line-height: 14px;
+					}
+				}
+
+				.rating-col
+				{
+					text-align: center;
+					color: $food-product-description-alternative-color;
+
+					.icon
+					{
+						font-size: 16px;
+					}
+
+					.rating-value
+					{
+						font-size: 11px;
+						vertical-align: bottom;
+					}
+				}
+
+				.reviews-col
+				{
+					text-align: center;
+					color: $food-product-description-alternative-color;
+
+					.icon
+					{
+						font-size: 16px;
+					}
+
+					.reviews-value
+					{
+						font-size: 11px;
+						vertical-align: bottom;
+					}
+				}
+			}
+		}
+	}
+
+}

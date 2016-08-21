@@ -1,0 +1,47 @@
+<ion-view class="feed-food-view feed-sub-view" cache-view="false">
+  <ion-content>
+    <section ng-include="'views/common/sort-and-filters-bar.html'"></section>
+    <div class="products-row">
+      <div class="food-product-container" ng-repeat="product in results = products">
+        <div class="row info-row">
+          <div class="col logo-col">
+            <a class="product-anchor" ui-sref="main.app.feed.food.content({productId: product.id})">
+              <pre-img ratio="_1_1">
+                <img class="logo-image" ng-src="{{ product.image }}" spinner-on-load>
+              </pre-img>
+            </a>
+          </div>
+          <div class="col description-col">
+            <div class="row">
+              <div class="col data-col">
+                <h5 class="product-title">
+                  <a class="product-anchor" ui-sref="main.app.feed.food.content({productId: product.id})">{{product.name}}</a>
+                </h5>
+                <p class="address-and-price-container">
+                  <span class="product-address">{{product.address}}</span>
+                  <span class="product-price-range" ng-repeat="price in [].constructor(product.price_range) track by $index">$</span>
+                </p>
+                <p class="product-tags-container">
+                  <span class="product-tag" ng-repeat="tag in product.tags">{{tag}}</span>
+                </p>
+              </div>
+              <div class="col col-20 actions-col">
+                <span class="product-rating rating-{{ product.rating | floor }}">{{product.rating}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row row-center images-row">
+          <div class="col col-20 image-wrapper" ng-repeat="picture in product.pictures.slice(0, 5) track by $index">
+            <pre-img ratio="_1_1">
+              <img class="product-image" ng-src="{{ picture }}" spinner-on-load>
+            </pre-img>
+            <div class="has-more-images" ng-if="$index == 4 && product.pictures.length > 5">
+              <span class="images-count">{{ product.pictures.length - 5 }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

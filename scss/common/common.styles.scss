@@ -1,0 +1,236 @@
+// Preload images aux styles (ratios)
+// Auto generate ratios for the whole app (see: http://stackoverflow.com/a/18120181/1116959)
+@each $ratio in $pre-img-ratios {
+  .pre-img._#{nth($ratio, 1)}_#{nth($ratio, 2)}
+  {
+    // Conserve aspect ratio (see: http://stackoverflow.com/a/10441480/1116959)
+    width: 100%;
+    @include calc(padding-bottom, "#{( nth($ratio, 2) / nth($ratio, 1)) * 100}%");
+  }
+}
+
+.pre-img
+{
+  position: relative;
+  background-color: $pre-img-bg;
+  border-radius: 2px;
+
+	// If the image is rounded
+	&.rounded-image
+	{
+		border-radius: 50%;
+	}
+
+  &.finish-loading
+  {
+    background-color: transparent;
+    border: none;
+
+		img
+	  {
+			visibility: visible;
+			opacity: 1;
+	  }
+  }
+
+  img
+  {
+    position: absolute;
+		left: 0px;
+		top: 0px;
+		visibility: hidden;
+		opacity: 0;
+		@include transition(visibility 0s linear, opacity 0.5s linear);
+  }
+}
+
+// spinner-on-load
+@include keyframes(spin) {
+  from {
+    @include transform(rotate(0deg));
+  }
+  to {
+    @include transform(rotate(359deg));
+  }
+}
+@include spinner-size($spinner-size, $spinner-svg-size);
+@include spinner-color($spinner-color);
+
+// Multimedia background
+.multi-bg-outer
+{
+  position: relative;
+  background-color: rgba(darken($multi-bg, 10%), 0.7);
+  height: 100%;
+  @include transition(all ease-in-out .3s);
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: -2;
+
+  &.finish-loading
+  {
+    background-color: transparent;
+  }
+
+  .bg-overlay
+  {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: $overlay-bg;
+    z-index: -1;
+    opacity: 0.6;
+  }
+
+  .multi-bg
+  {
+    display: none;
+  }
+}
+
+// Filters
+.input-number
+{
+  .value-down-button,
+  .value-up-button
+  {
+    min-height: 0px;
+    height: 30px;
+    line-height: 30px;
+    padding: 0px 8px;
+    min-width: 0px;
+    @include flex(0, 0, 50%);
+
+    &::before
+    {
+      font-size: 14px;
+      line-height: 28px;
+      margin: 0px !important;
+      padding: 0px;
+    }
+  }
+
+  .button
+  {
+    border: 1px solid #CCC;
+    background-color: #FFF;
+    &:first-child
+    {
+      border-top-left-radius: 15px;
+      border-bottom-left-radius: 15px;
+      border-right: none;
+
+      &::after
+      {
+        top: 4px;
+        right: 0px;
+        bottom: 4px;
+        border-right: 1px solid #CCC;
+      }
+    }
+    &:last-child
+    {
+      border-top-right-radius: 15px;
+      border-bottom-right-radius: 15px;
+      border-left: none;
+
+      &::after
+      {
+        top: 4px;
+        bottom: 4px;
+        left: 0px;
+      }
+    }
+  }
+}
+
+// No backdrop for popovers
+.popover-backdrop.active
+{
+  background-color: initial;
+}
+
+
+.sort-and-filters-row
+{
+  padding: 0px;
+  padding: 10px 18px;
+  background-color: $feed-bg;
+
+  & > .col
+  {
+    padding: 0px;
+  }
+
+  .sort-button
+  {
+    margin: 0px;
+    padding: 0px;
+    font-size: 16px;
+    font-weight: 300;
+    color: $sort-and-filters-icon-color;
+    float: left;
+
+    &.sort-icon:before
+    {
+      content:'';
+      width: 20px;
+      height: 17px;
+      background-size: 100% 100%;
+      margin: 4px 4px 0px 0px;
+      background-image: url('../img/common/sort_and_filters-sort-icon.png');
+    }
+  }
+
+  .results-count-title
+  {
+    text-align: center;
+    color: $sort-and-filters-color;
+    font-size: 16px;
+    font-weight: 300;
+    margin: 0px;
+  }
+
+  .filter-button
+  {
+    margin: 0px;
+    padding: 0px;
+    font-size: 16px;
+    font-weight: 300;
+    color: $sort-and-filters-icon-color;
+    float: right;
+
+    &.filter-icon:before
+    {
+      content:'';
+      width: 20px;
+      height: 17px;
+      background-size: 100% 100%;
+      margin: 4px 4px 0px 0px;
+      background-image: url('../img/common/sort_and_filters-filter-icon.png');
+    }
+  }
+}
+
+
+.progress-bar
+{
+  background-color: $progress-bar-bg;
+  margin: 5px 0px;
+  height: 10px;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.progress-value
+{
+  height: 100%;
+  border-radius: 5px;
+  float: left;
+  width: 0px;
+  background-color: $progress-bar-value-bg;
+  @include transition(width 0.6s ease);
+}

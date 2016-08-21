@@ -1,0 +1,319 @@
+.checkout-card-view
+{
+	background-color: $checkout-bg;
+
+	.checkout-card-header
+	{
+		background-color: $checkout-header-bg !important;
+		background: $checkout-header-bg !important;
+		border: none !important;
+		background-size: 0px !important; // To remove bottom border on header
+
+		.cancel-button
+		{
+			color: $checkout-header-color;
+			font-weight: 500;
+		}
+
+		.title
+		{
+			color: $checkout-header-color;
+			font-weight: 300;
+		}
+	}
+
+	.checkout-card-content
+	{
+		& > .scroll
+		{
+			height: 100%;
+		}
+	}
+
+	.everything-else-row
+	{
+		@include calc(height, "100% - #{$save-card-button-height}");
+		padding: 0px;
+		margin: 0px;
+
+		.col
+		{
+			padding: 0px;
+		}
+
+		.illustration-container
+		{
+			margin: 0px 19%;
+			margin-top: 90px;
+
+			.pre-img
+			{
+				background-color: rgba($checkout-bg, 0);
+			}
+
+			.illustration-image
+	    {
+	      width: 100%;
+	    }
+		}
+	}
+
+	.actions-row
+	{
+		height: $save-card-button-height;
+		padding: 0px;
+		margin: 0px;
+
+		.col
+		{
+			padding: 0px;
+		}
+
+		.action-button
+		{
+			margin: 0px;
+			height: $save-card-button-height;
+			line-height: $save-card-button-height - 5px;
+			font-size: 20px;
+			text-transform: uppercase;
+
+			@include button-style($save-card-button-bg, $save-card-button-border, $save-card-button-active-bg, $save-card-button-active-border, $save-card-button-text);
+
+			&::after
+			{
+				bottom: 0px;
+			}
+		}
+	}
+
+	.credit-card-title
+	{
+		text-align: center;
+		font-size: 17px;
+		font-weight: 400;
+		margin: 0px;
+		padding: 15px;
+		color: $checkout-color;
+	}
+
+	.card-chooser
+	{
+		padding: 0px 15px;
+	}
+
+	.cards-popover-button
+	{
+		margin: 0px;
+		border-radius: 6px;
+		text-align: left;
+		padding: 0px 15px;
+
+		@include button-style($cards-popover-button-bg, $cards-popover-button-border, $cards-popover-button-active-bg, $cards-popover-button-active-border, $cards-popover-button-color);
+
+		&::before
+		{
+			font-size: 20px;
+		}
+
+		// This means the popover is open
+		&.ion-chevron-up
+		{
+			border-bottom-left-radius: 0px;
+			border-bottom-right-radius: 0px;
+		}
+	}
+
+	.new-card-button-outer
+	{
+		padding: 15px;
+	}
+
+	.new-card-button
+	{
+		margin: 0px;
+		border-radius: 6px;
+		text-align: center;
+		padding: 0px 15px;
+		font-weight: 500;
+
+		@include button-style($new-card-button-bg, $new-card-button-border, $new-card-button-active-bg, $new-card-button-active-border, $new-card-button-color);
+
+		&::before
+		{
+			font-size: 20px;
+		}
+	}
+}
+
+.popover.card-chooser-popover
+{
+	background: $cards-popover-bg;
+	margin: 0px;
+	box-shadow: none;
+	@include calc(width, "100% - #{30px}");
+  margin: 0px 15px;
+  left: 15px !important;
+	border-radius: 6px;
+	border-top-left-radius: 0px;
+	border-top-right-radius: 0px;
+	border-top: 1px solid $cards-popover-border;
+  max-height: 60%;
+	margin-top: -1px;
+
+	@include cards-popover-dynamic-height($cards-popover-item-height);
+
+	.popover-arrow
+	{
+		display: none;
+	}
+
+	& > .scroll-content
+	{
+		margin: 0px;
+		padding: 0px;
+		border-radius: 6px;
+		border-top-left-radius: 0px;
+		border-top-right-radius: 0px;
+
+		& > .scroll
+		{
+			height: 100%;
+
+			.cards-scroller
+			{
+				height: 100%;
+				& > .scroll
+				{
+					height: 100%;
+				}
+			}
+		}
+	}
+
+	&.has-bottom-button > .scroll-content
+	{
+		& > .scroll
+		{
+			@include calc(height, "100% - #{55px}");
+		}
+	}
+
+	&.popover-bottom
+	{
+		border-radius: 6px;
+		border-bottom-left-radius: 0px;
+		border-bottom-right-radius: 0px;
+		border-top: none;
+		border-bottom: 1px solid $cards-popover-border;
+	}
+
+	.cards-list
+	{
+		display: block;
+
+		&.list
+		{
+			padding: 0px;
+		  margin: 0px 15px;
+
+			.item-radio
+			{
+				padding: 15px 2px;
+				margin: 0px;
+				@include item-style($cards-popover-item-bg, $cards-popover-item-border, $cards-popover-item-color);
+				border: none;
+
+				.item-content
+				{
+					background-color: $cards-popover-item-bg;
+					color: $cards-popover-item-color;
+					border-color: $cards-popover-item-border;
+					padding: 0px;
+					padding-left: 40px;
+				}
+
+				.radio-content
+				{
+					.radio-icon
+					{
+						left: 0px;
+						right: auto;
+						border-radius: 50%;
+						border: 5px solid $cards-popover-item-alt-option-bg;
+						background-color: $cards-popover-item-alt-option-bg;
+						width: 22px;
+						height: 22px;
+						padding: 0px;
+						visibility: visible;
+						margin: 16px 5px;
+
+						&::before
+						{
+							content: '';
+						}
+					}
+				}
+
+				input:checked + .radio-content
+				{
+					.radio-icon
+					{
+						background-color: #FFF;
+					}
+				}
+			}
+		}
+
+		.card-item
+		{
+			margin: 0px;
+			padding: 0px;
+			border-bottom: 1px solid $cards-popover-item-border;
+			height: $cards-popover-item-height;
+
+			&:last-child
+			{
+				border-bottom: none;
+			}
+
+			.card-number
+			{
+				font-size: 15px;
+			}
+
+			.edit-card-button
+			{
+				color: $cards-popover-item-edit-color;
+				font-size: 15px;
+				text-align: right;
+				min-height: 0px;
+				min-width: 0px;
+				padding: 0px;
+			}
+		}
+	}
+
+	.new-card-button
+	{
+		margin: 0px;
+		border: none;
+		line-height: $cards-popover-item-height;
+		position: fixed;
+		bottom: -$cards-popover-item-height + (-1px);
+
+		@include button-style($cards-popover-inset-button-bg, $cards-popover-inset-button-border, $cards-popover-inset-button-active-bg, $cards-popover-inset-button-active-border, $cards-popover-inset-button-color);
+	}
+}
+
+.new-credit-card-view
+{
+	&.popup-container
+	{
+		.popup
+		{
+			background-color: $checkout-popup-bg;
+
+
+		}
+	}
+}

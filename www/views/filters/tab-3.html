@@ -1,0 +1,81 @@
+<ion-scroll direction="y" ng-controller="FiltersCtrl">
+  <div class="card list filter-group range-filter-group">
+    <div class="distance-filters">
+      <div class="item item-divider">
+        Distance
+        <span class="range-output">{{distance_filter}} mi</span>
+      </div>
+      <div class="item range">
+        <input type="range" name="distance_filter" min="0" max="100" ng-model="distance_filter">
+      </div>
+    </div>
+  </div>
+
+  <div class="card list filter-group">
+    <div class="item item-divider">
+      Budget
+    </div>
+    <ion-list class="budget-filters filter-options-container">
+      <tag-radio name="budget_filter" ng-model="budget_filter" ng-value="'Any'">
+        <span class="radio-tag-content">Any</span>
+      </tag-radio>
+      <tag-radio name="budget_filter" ng-model="budget_filter" ng-value="'$'">
+        <span class="radio-tag-content">$</span>
+      </tag-radio>
+      <tag-radio name="budget_filter" ng-model="budget_filter" ng-value="'$$'">
+        <span class="radio-tag-content">$$</span>
+      </tag-radio>
+      <tag-radio name="budget_filter" ng-model="budget_filter" ng-value="'$$$'">
+        <span class="radio-tag-content">$$$</span>
+      </tag-radio>
+      <tag-radio name="budget_filter" ng-model="budget_filter" ng-value="'$$$$'">
+        <span class="radio-tag-content">$$$$</span>
+      </tag-radio>
+    </ion-list>
+  </div>
+
+  <div class="card list filter-group">
+    <div class="item item-divider">
+      House
+    </div>
+    <div class="number-input-filters filter-options-container">
+      <div class="row number-input-row">
+        <div class="col description-col">
+          <span class="description-line">Bedrooms</span>
+        </div>
+        <div class="col value-col">
+          <b class="input-quantity">{{bedrooms_filter}}</b>
+        </div>
+        <div class="col input-col">
+          <number-input ng-model="bedrooms_filter"></number-input>
+        </div>
+      </div>
+      <div class="row number-input-row">
+        <div class="col description-col">
+          <span class="description-line">Bathrooms</span>
+        </div>
+        <div class="col value-col">
+          <b class="input-quantity">{{bathroom_filter}}</b>
+        </div>
+        <div class="col input-col">
+          <number-input ng-model="bathroom_filter"></number-input>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card list filter-group range-filter-group">
+    <div class="price-filters">
+      <div class="item item-divider">
+        Price
+      </div>
+      <div class="item range">
+        <section class="range-slider" data-range-slider ng-model="price_filter" min="price_filter_range.min" max="price_filter_range.max" ticks="true"></section>
+      </div>
+      <div class="range-output-container">
+        <span class="range-output">$ {{price_filter.from}}</span>
+        <span class="range-output">$ {{price_filter.to}}</span>
+      </div>
+    </div>
+  </div>
+</ion-scroll>

@@ -1,0 +1,878 @@
+.food-content-view
+{
+	background-color: $food-content-bg;
+
+	.food-content-header
+	{
+		background-color: $food-content-header-bg !important;
+		background: $food-content-header-bg !important;
+		border: none !important;
+		background-size: 0px !important; // To remove bottom border on header
+
+		.title
+		{
+			color: $food-content-header-color;
+			font-weight: 300;
+		}
+
+		.back-button,
+		.share-button
+		{
+			color: $food-content-header-color;
+			font-weight: 500;
+		}
+	}
+
+	.product-images-slider
+	{
+		height: $food-content-images-slider-height;
+
+		.image-container
+		{
+			height: 100%;
+
+			&.multi-bg-outer
+			{
+				background-color: $food-content-multi-bg;
+
+				.bg-overlay
+				{
+					opacity: 0.4;
+					background-color: $food-content-multi-bg-overlay;
+				}
+			}
+
+			.product-image
+			{
+				height: $food-content-images-slider-height;
+				position: initial;
+			}
+
+			.product-illustration-container
+			{
+				width: 100%;
+				height: 100%;
+				@include display(flex);
+				@include align-items(center);
+				@include justify-content(center);
+
+				.product-illustration
+				{
+					padding: 0px 20%;
+					width: 100%;
+				}
+			}
+		}
+	}
+
+	.brief-info-row
+	{
+		padding: 13px 18px;
+
+		.col
+		{
+			padding: 0px;
+		}
+
+		.product-name
+		{
+			color: $food-content-color;
+			font-size: 18px;
+			font-weight: 500;
+			margin: 0px;
+			line-height: 24px;
+		}
+
+		.product-style
+		{
+			color: $food-content-color-2;
+			font-size: 15px;
+			margin: 0px;
+			line-height: 22px;
+		}
+
+		.product-price-range
+		{
+			color: $food-content-price-color;
+			font-size: 14px;
+			font-weight: 400;
+			width: 9px;
+			display: inline-block;
+			text-align: center;
+			float: right;
+			line-height: 30px;
+		}
+	}
+
+	.rating-row
+	{
+		padding: 2px 18px;
+		margin: 0px;
+
+		.col.rating-col
+		{
+			padding: 0px 5px;
+			border-right: 1px solid $food-content-other-ratings-border;
+			text-align: center;
+			@include flex(0 0 23%);
+			color: $food-content-other-ratings-color;
+
+			&:first-child
+			{
+				padding-left: 0px;
+				text-align: left;
+				@include flex(0 0 15%);
+			}
+			&:last-child
+			{
+				border-right: none;
+				padding-right: 0px;
+				text-align: right;
+				@include flex(0 0 16%);
+			}
+
+			.other-rating
+			{
+				font-size: 12px;
+				font-weight: 500;
+			}
+		}
+
+		.product-rating
+		{
+			color: $food-content-rating-color;
+			border-radius: 2px;
+			padding: 0px 6px;
+			font-size: 14px;
+			font-weight: 600;
+			height: 100%;
+  		display: inline-block;
+			text-align: center;
+
+			&.rating-1
+			{
+				background-color: $food-content-rating-1-bg;
+			}
+			&.rating-2
+			{
+				background-color: $food-content-rating-2-bg;
+			}
+			&.rating-3
+			{
+				background-color: $food-content-rating-3-bg;
+			}
+			&.rating-4
+			{
+				background-color: $food-content-rating-4-bg;
+			}
+			&.rating-5
+			{
+				background-color: $food-content-rating-5-bg;
+			}
+		}
+	}
+
+	.schedules-and-address-row
+	{
+		padding: 18px 18px 8px;
+		margin: 0px;
+
+		.col
+		{
+			padding: 0px;
+		}
+
+		.schedules-button,
+		.addresses-button
+		{
+			border-radius: 0px;
+			background-color: $food-content-bg;
+			text-align: left;
+			padding: 0px;
+			margin: 0px;
+			min-height: 0px;
+			height: $food-content-popup-buttons-height;
+			line-height: $food-content-popup-buttons-height;
+
+			&.with-value
+			{
+				line-height: $food-content-popup-buttons-height/2;
+			}
+
+			&::before
+			{
+				line-height: $food-content-popup-buttons-height;
+				color: $food-content-color;
+			}
+
+			&:last-child
+			{
+				border: none;
+				margin-top: 10px;
+			}
+
+			.button-title
+			{
+				color: $food-content-color;
+				display: block;
+				line-height: 30px;
+				font-size: 16px;
+  			font-weight: 500;
+			}
+
+			.button-data
+			{
+				display: block;
+				margin-top: -5px;
+				color: $food-content-color-2;
+				font-size: 13px;
+			}
+		}
+
+		.buttons-divider
+		{
+			border: none;
+			border-bottom: 1px solid $food-content-popup-buttons-border;
+		}
+	}
+
+	.address-map-row
+	{
+		padding: 0px;
+		margin: 0px;
+
+		.col
+		{
+			padding: 0px;
+		}
+
+		.map-wrapper
+		{
+			height: 150px;
+
+			map
+			{
+				width: 100%;
+				height: 100% !important;
+			}
+		}
+	}
+
+	.tags-row
+	{
+		padding: 15px 18px;
+		margin: 0px;
+		color: $food-content-color-2;
+
+		.col.product-tags-container
+		{
+			padding: 0px;
+			@include display(flex);
+			@include flex-wrap(wrap);
+			@include justify-content(center);
+			@include align-items(center);
+
+			.product-tag
+			{
+				border-radius: 2px;
+				border: 1px solid $food-content-color-2;
+				padding: 0px 6px;
+				margin: 4px 3px;
+				font-size: 13px;
+				color: $food-content-color-2;
+				line-height: 18px;
+			}
+		}
+	}
+
+	.product-sub-title
+	{
+		padding: 8px 18px;
+		margin: 0px;
+		color: $food-content-color;
+		line-height: 30px;
+		font-size: 16px;
+		font-weight: 500;
+	}
+
+	.product-sections-divider
+	{
+		border: none;
+		border-bottom: 1px solid $food-content-sections-divider-border;
+		margin: 5px 18px;
+	}
+
+	.images-row
+	{
+		padding: 8px 18px;
+		margin: 0px;
+
+		.col
+		{
+			padding: 0px;
+		}
+
+		.image-wrapper
+		{
+			position: relative;
+			padding-right: $food-content-images-padding/2;
+			padding-left: $food-content-images-padding/2;
+
+			.pre-img
+			{
+				border-radius: 0px;
+			}
+
+			@include spinner-size(20px, 20px);
+
+			.product-image
+			{
+				width: 100%;
+			}
+
+			.has-more-images
+			{
+				position: absolute;
+				top: 0px;
+				bottom: 0px;
+				left: 0px;
+				right: 0px;
+				margin-right: $food-content-images-padding/2;
+				margin-left: $food-content-images-padding/2;
+				background-color: rgba($food-content-images-overlay-bg, .5);
+				@include display(flex);
+				@include align-items(center);
+				@include justify-content(center);
+
+				.images-count
+				{
+					font-size: 22px;
+					color: $food-content-images-overlay-color;
+					font-weight: 600;
+
+					&::before
+					{
+						content: '+';
+						font-size: 26px;
+						color: $food-content-images-overlay-color;
+						font-weight: 600;
+					}
+				}
+			}
+		}
+	}
+
+	.upload-row,
+	.write-review-row
+	{
+		margin: 0px;
+		padding: 12px 30px;
+
+		.col
+		{
+			padding: 0px;
+		}
+
+		.upload-photo-button,
+		.new-review-button
+		{
+			margin: 0px;
+			text-align: center;
+			min-height: 0px;
+			height: 36px;
+			line-height: 30px;
+			border-radius: 18px;
+			color: $food-content-action-button-color;
+			background-color: $food-content-action-button-bg;
+			font-size: 18px;
+			font-weight: 400;
+		}
+	}
+
+	.popular-dishes-row
+	{
+		margin: 0px;
+		padding: 8px 18px;
+
+		.col,
+		.row
+		{
+			padding: 0px;
+			margin: 0px;
+		}
+
+		.dish-row
+		{
+			margin-bottom: 13px;
+
+			&:last-child
+			{
+				margin-bottom: 0px;
+			}
+
+			.progress-bar
+			{
+				background-color: $food-content-progress-bg;
+				margin: 5px 0px;
+			}
+
+			.progress-value
+			{
+			  background-color: $food-content-progress-value-bg;
+			}
+		}
+
+		.dishes-rate-col
+		{
+			text-align: right;
+			color: $food-content-color-2;
+
+			.icon
+			{
+				display: inline-block;
+
+				&::before
+				{
+					font-size: 16px;
+					line-height: 20px;
+					font-weight: 600;
+				}
+			}
+
+			.dish-rate-value
+			{
+				font-size: 12px;
+				float: right;
+				margin-left: 6px;
+			}
+		}
+
+		.dish-name
+		{
+			font-size: 14px;
+			color: $food-content-color-2;
+			line-height: 18px;
+			margin: 0px 0px 8px;
+			font-weight: 400;
+		}
+	}
+
+	.review-item
+	{
+		margin: 0px;
+		padding: 5px 18px 18px;
+
+		&:last-of-type
+		{
+			.bottom-row
+			{
+				.review-other-ratings-container
+				{
+					border-bottom: none;
+				}
+			}
+		}
+
+		.col,
+		.row
+		{
+			padding: 0px;
+			margin: 0px;
+		}
+
+		.top-row
+		{
+			padding-bottom: 18px;
+		}
+
+		.middle-row
+		{
+			padding-bottom: 18px;
+		}
+
+		.bottom-row
+		{
+			padding: 0px 18px;
+		}
+
+		.image-col
+		{
+			@include flex(0 0 18%);
+
+			.review-image
+			{
+				width: 100%;
+			}
+		}
+
+		.description-col
+		{
+			padding-left: 12px;
+			@include flex(0 0 58%);
+			@include display(flex);
+			@include flex-wrap(wrap);
+
+			.review-author-name
+			{
+				font-size: 15px;
+				margin: 0px;
+				color: $food-content-color;
+				font-weight: 400;
+				@include flex(0 0 100%);
+				@include align-self(flex-start);
+				line-height: 18px;
+			}
+
+			.icons-container
+			{
+				@include flex(0 0 100%);
+				@include align-self(flex-end);
+				color: $food-content-color-2;
+				margin-bottom: -4px;
+
+				.icon
+				{
+					margin-right: 6px;
+					display: inline-block;
+					float: left;
+
+					&::before
+					{
+						line-height: 20px;
+						font-size: 16px;
+					}
+				}
+
+				.icon-text
+				{
+					font-size: 11px;
+					font-weight: 500;
+					line-height: 20px;
+					float: left;
+				}
+
+				.icon-group
+				{
+					padding-right: 12px;
+
+					&:last-child
+					{
+						padding: 0px;
+					}
+				}
+			}
+		}
+
+		.reputation-col
+		{
+			padding-left: 4px;
+			@include flex(0 0 24%);
+			@include display(flex);
+			@include flex-wrap(wrap);
+
+			.review-date
+			{
+				@include flex(0 0 100%);
+				@include align-self(flex-start);
+				text-align: right;
+				color: $food-content-color-2;
+				font-size: 10px;
+				font-weight: 300;
+				line-height: 18px;
+			}
+
+			.rating-outer
+			{
+				@include flex(0 0 100%);
+				@include align-self(flex-end);
+
+				.review-rating
+				{
+					color: $food-content-rating-color;
+					border-radius: 2px;
+					padding: 0px 6px;
+					font-size: 14px;
+					font-weight: 600;
+					height: 100%;
+		  		display: inline-block;
+					text-align: center;
+					float: right;
+
+					&.rating-1
+					{
+						background-color: $food-content-rating-1-bg;
+					}
+					&.rating-2
+					{
+						background-color: $food-content-rating-2-bg;
+					}
+					&.rating-3
+					{
+						background-color: $food-content-rating-3-bg;
+					}
+					&.rating-4
+					{
+						background-color: $food-content-rating-4-bg;
+					}
+					&.rating-5
+					{
+						background-color: $food-content-rating-5-bg;
+					}
+				}
+			}
+		}
+
+		.review-description
+		{
+			color: $food-content-color-2;
+			font-size: 14px;
+			font-weight: 300;
+			line-height: 19px;
+			margin: 0px;
+		}
+
+		.review-other-ratings-container
+		{
+			padding: 0px 0px 18px;
+			border-bottom: 1px solid rgba($food-content-color-2, .4);
+
+			.col.rating-col
+			{
+				padding: 0px 5px;
+				border-right: 1px solid rgba($food-content-color-2, .4);
+				text-align: center;
+				color: $food-content-color-2;
+
+				&:first-child
+				{
+					padding-left: 0px;
+				}
+				&:last-child
+				{
+					border-right: none;
+					padding-right: 0px;
+				}
+
+				.other-rating
+				{
+					font-size: 12px;
+					font-weight: 500;
+				}
+			}
+		}
+	}
+
+	.all-reviews-row
+	{
+		margin: 0px;
+		padding: 0px 18px 13px;
+
+		.col,
+		.row
+		{
+			padding: 0px;
+			margin: 0px;
+		}
+
+		.read-all-reviews-button
+		{
+			border-radius: 0px;
+			background-color: $food-content-bg;
+			text-align: center;
+			padding: 0px;
+			margin: 0px;
+			min-height: 0px;
+			height: $food-content-popup-buttons-height;
+			line-height: $food-content-popup-buttons-height;
+			color: $food-content-color;
+			font-size: 15px;
+			font-weight: 300;
+			text-transform: uppercase;
+			border: 1px solid rgba($food-content-color-2, .4);
+			border-right: none;
+			border-left: none;
+			padding-right: 13px;
+
+			&::before
+			{
+				line-height: $food-content-popup-buttons-height;
+				color: $food-content-color;
+			}
+		}
+	}
+
+	.incorrect-info-title
+	{
+		color: $food-content-incorrect-info-color;
+		text-align: center;
+		font-size: 15px;
+		line-height: 20px;
+		font-weight: 400;
+		margin: 0px;
+		padding-top: 13px;
+	}
+
+	.incorrect-info-sub-title
+	{
+		color: $food-content-incorrect-info-color;
+		text-align: center;
+		display: block;
+		padding-bottom: 30px;
+		font-size: 12px;
+		font-weight: 300;
+	}
+}
+
+
+.food-schedules-view
+{
+	.schedules-title-row
+	{
+		padding: 13px 0px;
+		margin: 0px;
+
+		.col
+		{
+			padding: 0px;
+			margin: 0px;
+		}
+
+		.title-name
+		{
+			margin: 0px;
+			color: $food-content-color;
+			font-size: 16px;
+			line-height: 24px;
+		}
+
+		.title-icon
+		{
+			float: right;
+
+			&::before
+			{
+				color: $food-content-color;
+				font-size: 20px;
+				line-height: 24px;
+			}
+		}
+	}
+
+	.schedules-list
+	{
+		padding-bottom: 13px;
+		margin: 0px;
+
+		.item
+		{
+			border: none;
+			padding: 5px 0px;
+			color: $food-content-schedules-color;
+			font-size: 14px;
+
+			.item-note
+			{
+				color: rgba($food-content-schedules-color, .8);
+				font-size: 13px;
+			}
+
+			.close-note
+			{
+				background-color: $food-content-schedules-close-bg;
+				color: $food-content-schedules-close-color;
+				text-transform: uppercase;
+				height: 20px;
+				border-radius: 10px;
+				padding: 0px 6px;
+				line-height: 22px;
+				font-size: 12px;
+			}
+		}
+	}
+
+	.schedules-divider
+	{
+		border: none;
+		border-bottom: 1px solid $food-content-schedules-divider-color;
+		margin: 5px 0px;
+	}
+}
+
+.food-addresses-view
+{
+	.addresses-list
+	{
+		display: block;
+
+		&.list
+		{
+			padding: 0px;
+		  margin: 0px;
+
+			.item-radio
+			{
+				padding: 15px 2px;
+				margin: 0px;
+				@include item-style($food-content-addresses-item-bg, $food-content-addresses-item-border, $food-content-addresses-item-color);
+				border: none;
+
+				.item-content
+				{
+					background-color: $food-content-addresses-item-bg;
+					color: $food-content-addresses-item-color;
+					border-color: $food-content-addresses-item-border;
+					padding: 0px;
+					padding-left: 40px;
+				}
+
+				.radio-content
+				{
+					.radio-icon
+					{
+						left: 0px;
+						right: auto;
+						border-radius: 50%;
+						border: 5px solid $food-content-addresses-item-alt-option-bg;
+						background-color: $food-content-addresses-item-alt-option-bg;
+						width: 22px;
+						height: 22px;
+						padding: 0px;
+						visibility: visible;
+						margin: 16px 5px;
+
+						&::before
+						{
+							content: '';
+						}
+					}
+				}
+
+				input:checked + .radio-content
+				{
+					.radio-icon
+					{
+						background-color: #FFF;
+					}
+				}
+			}
+		}
+
+		.address-item
+		{
+			margin: 0px;
+			padding: 0px;
+			border-bottom: 1px solid $food-content-addresses-item-border;
+			height: $food-content-addresses-item-height;
+
+			&:last-child
+			{
+				border-bottom: none;
+			}
+
+			.address-name
+			{
+				font-size: 15px;
+			}
+		}
+	}
+}

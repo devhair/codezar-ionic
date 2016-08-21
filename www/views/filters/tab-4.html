@@ -1,0 +1,37 @@
+<ion-scroll direction="y" ng-controller="FiltersCtrl">
+  <div class="card list filter-group">
+    <div class="item item-divider">
+      Color
+    </div>
+    <ion-list class="color-filters filter-options-container">
+      <color-radio name="color_filter" ng-model="color_filter" ng-value="'#67ade5'"></color-radio>
+      <color-radio name="color_filter" ng-model="color_filter" ng-value="'#c284e5'"></color-radio>
+      <color-radio name="color_filter" ng-model="color_filter" ng-value="'#fa6dbc'"></color-radio>
+      <color-radio name="color_filter" ng-model="color_filter" ng-value="'#ff8b81'"></color-radio>
+      <color-radio name="color_filter" ng-model="color_filter" ng-value="'#ffab6b'"></color-radio>
+    </ion-list>
+  </div>
+
+  <div class="card list filter-group">
+    <div class="item item-divider">
+      Size
+    </div>
+    <ion-list class="size-filters filter-options-container">
+      <tag-radio name="size_filter" ng-model="size_filter" ng-value="'XS'">
+        <span class="radio-tag-content">XS</span>
+      </tag-radio>
+      <tag-radio name="size_filter" ng-model="size_filter" ng-value="'S'">
+        <span class="radio-tag-content">S</span>
+      </tag-radio>
+      <tag-radio name="size_filter" ng-model="size_filter" ng-value="'M'">
+        <span class="radio-tag-content">M</span>
+      </tag-radio>
+      <tag-radio name="size_filter" ng-model="size_filter" ng-value="'L'">
+        <span class="radio-tag-content">L</span>
+      </tag-radio>
+      <tag-radio name="size_filter" ng-model="size_filter" ng-value="'XL'">
+        <span class="radio-tag-content">XL</span>
+      </tag-radio>
+    </ion-list>
+  </div>
+</ion-scroll>

@@ -1,0 +1,183 @@
+.auth-view
+{
+	background-color: $auth-bg;
+
+	.images-row
+	{
+		padding: 0px;
+		padding-top: $auth-top-padding;
+
+		& > .col
+		{
+			padding: 0px;
+		}
+
+		.pre-img
+		{
+			background-color: transparent;
+		}
+		.spinner-on-load
+		{
+		  color: $auth-color;
+		}
+		ion-spinner.spinner-on-load
+		{
+		  stroke: $auth-color;
+		}
+
+		.illustration-container
+		{
+			margin: 12px 23% 0px 24%;
+
+			.illustration-image
+	    {
+	      width: 100%;
+	    }
+		}
+	}
+
+	.form-row
+	{
+		margin: 0px;
+		padding: 0px;
+
+		& > .col
+		{
+			padding: 0px;
+		}
+
+		.form-container
+		{
+			margin: 0px 9%;
+
+			.input-list
+			{
+				margin: 0px;
+				background: none;
+			}
+
+			.item-input
+			{
+				height: $auth-inputs-height;
+				padding: 15px 20px;
+				margin-bottom: 13px;
+				border-radius: $auth-inputs-height/2;
+
+				@include item-style($auth-input-bg, $auth-input-border, $auth-input-text);
+
+				&:last-child
+				{
+					margin-bottom: 0px;
+				}
+
+				input
+				{
+					padding: 0px;
+					height: initial;
+					color: $auth-color;
+					text-align: center;
+
+					@include _placeholder {
+				    text-align: center;
+						color: $auth-placeholder-color;
+				  }
+				}
+			}
+		}
+	}
+
+	// Show/Hide password
+	.show-hide-input
+	{
+	  display: inherit;
+	  width: 100%;
+
+		input
+		{
+			padding-right: $auth-inputs-height/2 !important;
+			padding-left: $auth-inputs-height/2 !important;
+		}
+	}
+	.toggle-view-anchor
+	{
+	  position:absolute;
+	  top: 0px;
+	  right: 0px;
+	  height: $auth-inputs-height;
+	  line-height: $auth-inputs-height;
+
+	  *
+	  {
+	    color: $auth-password-icon-color !important;
+	    display: block;
+	    font-size: 18px;
+	    width: $auth-inputs-height;
+	    text-align: center;
+	    font-weight: 500;
+	  }
+	}
+
+	.message
+	{
+		margin: 0px;
+		margin-top: 5px;
+		font-size: 12px;
+		text-align: center;
+
+		&.error
+		{
+			color: $auth-error-color;
+		}
+	}
+
+	.facebook-button
+	{
+		margin: 40px 9% 0px 9%;
+		height: $auth-buttons-height;
+		line-height: $auth-buttons-height - 5px;
+		font-size: 18px;
+		border-radius: $auth-buttons-height/2;
+
+		@include button-style($facebook-button-bg, $facebook-button-border, $facebook-button-active-bg, $facebook-button-active-border, $facebook-button-text);
+	}
+
+	.form-divider
+	{
+		margin: 30px 0px;
+		display: block;
+		text-align: center;
+		font-size: 20px;
+		font-weight: 300;
+		color: $auth-color;
+	}
+
+	.auth-action-button
+	{
+		margin: 0px;
+		margin-top: 15px;
+		height: $auth-buttons-height;
+		text-transform: uppercase;
+		line-height: $auth-buttons-height - 5px;
+		font-size: 18px;
+		border-radius: $auth-buttons-height/2;
+
+		@include button-style($auth-action-button-bg, $auth-action-button-border, $auth-action-button-active-bg, $auth-action-button-active-border, $auth-action-button-text);
+	}
+
+	.alternative-actions
+	{
+		margin: 5px 9% 0px;
+
+		.action-link
+		{
+			text-decoration: none;
+
+			@include button-clear($auth-color);
+
+			& + .action-link
+			{
+				float: right;
+			}
+		}
+	}
+}

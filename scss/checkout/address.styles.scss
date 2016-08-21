@@ -1,0 +1,567 @@
+.checkout-address-view
+{
+	background-color: $checkout-bg;
+
+	.checkout-address-header
+	{
+		background-color: $checkout-header-bg !important;
+		background: $checkout-header-bg !important;
+		border: none !important;
+		background-size: 0px !important; // To remove bottom border on header
+
+		.cancel-button
+		{
+			color: $checkout-header-color;
+			font-weight: 500;
+		}
+
+		.title
+		{
+			color: $checkout-header-color;
+			font-weight: 300;
+		}
+	}
+
+	.checkout-address-content
+	{
+		& > .scroll
+		{
+			height: 100%;
+		}
+	}
+
+	.everything-else-row
+	{
+		@include calc(height, "100% - #{$save-address-button-height}");
+		padding: 0px;
+		margin: 0px;
+
+		.col
+		{
+			padding: 0px;
+		}
+	}
+
+	.actions-row
+	{
+		height: $save-address-button-height;
+		padding: 0px;
+		margin: 0px;
+
+		.col
+		{
+			padding: 0px;
+		}
+
+		.action-button
+		{
+			margin: 0px;
+			height: $save-address-button-height;
+			line-height: $save-address-button-height - 5px;
+			font-size: 20px;
+			text-transform: uppercase;
+
+			@include button-style($save-address-button-bg, $save-address-button-border, $save-address-button-active-bg, $save-address-button-active-border, $save-address-button-text);
+
+			&::after
+			{
+				bottom: 0px;
+			}
+		}
+	}
+
+	.shipping-address-title
+	{
+		text-align: center;
+		font-size: 17px;
+		font-weight: 400;
+		margin: 0px;
+		padding: 15px;
+		color: $checkout-color;
+	}
+
+	.address-chooser
+	{
+		padding: 0px 15px;
+	}
+
+	.addresses-popover-button
+	{
+		margin: 0px;
+		border-radius: 6px;
+		text-align: left;
+		padding: 0px 15px;
+
+		@include button-style($addresses-popover-button-bg, $addresses-popover-button-border, $addresses-popover-button-active-bg, $addresses-popover-button-active-border, $addresses-popover-button-color);
+
+		&::before
+		{
+			font-size: 20px;
+		}
+
+		// This means the popover is open
+		&.ion-chevron-up
+		{
+			border-bottom-left-radius: 0px;
+			border-bottom-right-radius: 0px;
+		}
+	}
+
+	.new-address-button-outer
+	{
+		padding: 15px;
+	}
+
+	.new-address-button
+	{
+		margin: 0px;
+		border-radius: 6px;
+		text-align: center;
+		padding: 0px 15px;
+		font-weight: 500;
+
+		@include button-style($new-address-button-bg, $new-address-button-border, $new-address-button-active-bg, $new-address-button-active-border, $new-address-button-color);
+
+		&::before
+		{
+			font-size: 20px;
+		}
+	}
+
+	.billing-same-as-shipping-option
+	{
+		display: block;
+		// margin: 0px;
+		padding: 5px 15px;
+
+		.list
+		{
+			.item-checkbox
+			{
+				padding-left: 40px;
+				border: none;
+				background: rgba($checkout-bg, 0);
+				color: $checkout-color;
+				font-size: 15px;
+				font-weight: 400;
+
+				.item-content
+				{
+					white-space: initial;
+				}
+
+				.checkbox
+				{
+					top: 0px;
+					right: 0px;
+					left: 0px;
+					padding: 16px 5px;
+					margin: 0px;
+
+					.checkbox-icon
+					{
+						width: 22px;
+						height: 22px;
+
+						&::before
+						{
+							border-radius: 6px;
+							border: none;
+							background-color: $billing-option-bg;
+						}
+
+						&::after
+						{
+							border-width: 3px;
+							top: 28%;
+							left: 22%;
+							width: 12px;
+							height: 8px;
+						}
+					}
+
+					input:checked
+					{
+						& + .checkbox-icon
+						{
+							&::before
+							{
+								background-color: $billing-option-checked-bg;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.address-details-container
+	{
+		background-color: $address-details-bg;
+		padding: 0px 30px;
+
+		.row
+		{
+			padding: 0px;
+			margin: 0px;
+
+			.col
+			{
+				padding: 0px 10px;
+
+				&:first-child
+				{
+					padding-left: 5px;
+				}
+
+				&:last-child
+				{
+					padding-right: 5px;
+				}
+			}
+		}
+
+		& > .row
+		{
+			padding: 10px 0px;
+			border-bottom: 1px solid $address-details-border;
+
+			&:last-child
+			{
+				border: none;
+			}
+		}
+
+		.item
+		{
+			border: none;
+			margin: -1px 0px;
+
+			&.col-50,
+			&.col-25
+			{
+				border-right: 1px solid $address-details-border;
+
+				&:last-child
+				{
+					border: none;
+				}
+			}
+
+			.input-label
+			{
+				font-size: 11px;
+				padding: 0px;
+				text-transform: uppercase;
+				font-weight: 600;
+				color: $address-details-color;
+			}
+
+			.input-data
+			{
+				color: $address-details-color;
+				font-size: 16px;
+			  font-weight: 300;
+			}
+		}
+	}
+}
+
+.popover.address-chooser-popover
+{
+	background: $addresses-popover-bg;
+	margin: 0px;
+	box-shadow: none;
+	@include calc(width, "100% - #{30px}");
+  margin: 0px 15px;
+  left: 15px !important;
+	border-radius: 6px;
+	border-top-left-radius: 0px;
+	border-top-right-radius: 0px;
+	border-top: 1px solid $addresses-popover-border;
+  max-height: 60%;
+	margin-top: -1px;
+
+	@include addresses-popover-dynamic-height($addresses-popover-item-height);
+
+	.popover-arrow
+	{
+		display: none;
+	}
+
+	& > .scroll-content
+	{
+		margin: 0px;
+		padding: 0px;
+		border-radius: 6px;
+		border-top-left-radius: 0px;
+		border-top-right-radius: 0px;
+
+		& > .scroll
+		{
+			height: 100%;
+
+			.addresses-scroller
+			{
+				height: 100%;
+				& > .scroll
+				{
+					height: 100%;
+				}
+			}
+		}
+	}
+
+	&.has-bottom-button > .scroll-content
+	{
+		& > .scroll
+		{
+			@include calc(height, "100% - #{55px}");
+		}
+	}
+
+	&.popover-bottom
+	{
+		border-radius: 6px;
+		border-bottom-left-radius: 0px;
+		border-bottom-right-radius: 0px;
+		border-top: none;
+		border-bottom: 1px solid $addresses-popover-border;
+	}
+
+	.addresses-list
+	{
+		display: block;
+
+		&.list
+		{
+			padding: 0px;
+		  margin: 0px 15px;
+
+			.item-radio
+			{
+				padding: 15px 2px;
+				margin: 0px;
+				@include item-style($addresses-popover-item-bg, $addresses-popover-item-border, $addresses-popover-item-color);
+				border: none;
+
+				.item-content
+				{
+					background-color: $addresses-popover-item-bg;
+					color: $addresses-popover-item-color;
+					border-color: $addresses-popover-item-border;
+					padding: 0px;
+					padding-left: 40px;
+				}
+
+				.radio-content
+				{
+					.radio-icon
+					{
+						left: 0px;
+						right: auto;
+						border-radius: 50%;
+						border: 5px solid $addresses-popover-item-alt-option-bg;
+						background-color: $addresses-popover-item-alt-option-bg;
+						width: 22px;
+						height: 22px;
+						padding: 0px;
+						visibility: visible;
+						margin: 16px 5px;
+
+						&::before
+						{
+							content: '';
+						}
+					}
+				}
+
+				input:checked + .radio-content
+				{
+					.radio-icon
+					{
+						background-color: #FFF;
+					}
+				}
+			}
+		}
+
+		.address-item
+		{
+			margin: 0px;
+			padding: 0px;
+			border-bottom: 1px solid $addresses-popover-item-border;
+			height: $addresses-popover-item-height;
+
+			&:last-child
+			{
+				border-bottom: none;
+			}
+
+			.address-name
+			{
+				font-size: 15px;
+			}
+
+			.edit-address-button
+			{
+				color: $addresses-popover-item-edit-color;
+				font-size: 15px;
+				text-align: right;
+				min-height: 0px;
+				min-width: 0px;
+				padding: 0px;
+			}
+		}
+	}
+
+	.new-address-button
+	{
+		margin: 0px;
+		border: none;
+		line-height: $addresses-popover-item-height;
+		position: fixed;
+		bottom: -$addresses-popover-item-height + (-1px);
+
+		@include button-style($addresses-popover-inset-button-bg, $addresses-popover-inset-button-border, $addresses-popover-inset-button-active-bg, $addresses-popover-inset-button-active-border, $addresses-popover-inset-button-color);
+	}
+}
+
+.new-shipping-address-view,
+.edit-shipping-address-view,
+.edit-card-view,
+.new-card-view
+{
+	&.popup-container
+	{
+		.popup
+		{
+			background-color: $checkout-popup-bg;
+		}
+
+		.popup-buttons
+		{
+		  height: initial;
+		  min-height: 0px;
+		  padding: 0px;
+			margin: 0px;
+		  background-color: $address-popup-button-bg;
+			border-radius: 0px 0px 6px 6px;
+
+			.button
+			{
+				margin: 0px;
+				background-color: $address-popup-button-bg;
+				color: $address-popup-button-color;
+				border-radius: 0px;
+				border: none;
+
+				&:first-child
+				{
+					border-bottom-left-radius: 6px;
+				}
+				&:last-child
+				{
+					border-bottom-right-radius: 6px;
+				}
+
+				&.delete-button
+				{
+					background-color: $address-popup-button-delete-bg;
+					@include flex(0 0 40%);
+				}
+			}
+		}
+	}
+}
+
+.new-shipping-address-view,
+.edit-shipping-address-view,
+.edit-card-view,
+.new-card-view
+{
+	.address-details-container,
+	.card-details-container
+	{
+		background-color: $address-popup-bg;
+		padding: 0px;
+
+		.row
+		{
+			padding: 0px;
+			margin: 0px;
+
+			&:first-child
+			{
+				padding-top: 5px;
+			}
+
+			.col
+			{
+				padding: 0px 10px;
+
+				&:first-child
+				{
+					padding-left: 5px;
+				}
+
+				&:last-child
+				{
+					padding-right: 5px;
+				}
+			}
+		}
+
+		& > .row
+		{
+			padding: 10px 0px;
+			border-bottom: 1px solid $address-popup-border;
+
+			&:last-child
+			{
+				border: none;
+			}
+		}
+
+		.item
+		{
+			border: none;
+			margin: -1px 0px;
+
+			&.col-50,
+			&.col-25
+			{
+				border-right: 1px solid $address-popup-border;
+
+				&:last-child
+				{
+					border: none;
+				}
+			}
+
+			.input-label
+			{
+				font-size: 11px;
+				padding: 0px;
+				text-transform: uppercase;
+				font-weight: 600;
+				color: $address-popup-color;
+			  padding-top: 5px;
+			}
+
+			.input-data
+			{
+				color: $address-popup-color;
+				font-size: 15px;
+				font-weight: 300;
+				padding: 0px;
+				height: 22px;
+
+				@include _placeholder
+				{
+					color: rgba($address-popup-color, .4);
+				}
+			}
+		}
+	}
+}

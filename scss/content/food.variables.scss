@@ -1,0 +1,46 @@
+$food-content-addresses-item-border: #ffe6dc;
+$food-content-addresses-item-color: #4d301c;
+$food-content-addresses-item-bg: #FFF;
+$food-content-addresses-item-alt-option-bg: #ecd5cb;
+$food-content-addresses-item-height: 55px;
+
+$food-content-bg: #FFF;
+$food-content-color: #4d301c;
+$food-content-color-2: #a48d80;
+$food-content-header-bg: #ffab6b;
+$food-content-header-color: #FFF;
+$food-content-images-slider-height: 240px;
+$food-content-multi-bg: rgba(darken(#FFF, 10), .25);
+$food-content-multi-bg-overlay: #302a25;
+$food-content-price-color: #ffab6b;
+$food-content-rating-5-bg: #7ce198;
+$food-content-rating-4-bg: #a8e07c;
+$food-content-rating-3-bg: #cee07c;
+$food-content-rating-2-bg: #e0c77c;
+$food-content-rating-1-bg: #e07c7c;
+$food-content-rating-color: #FFF;
+$food-content-other-ratings-color: #a48d80;
+$food-content-other-ratings-border: #d0c5bd;
+$food-content-popup-buttons-border: #ffe6dc;
+$food-content-popup-buttons-height: 50px;
+$food-content-sections-divider-border: #d0c5bd;
+$food-content-images-padding: 4px;
+$food-content-images-overlay-bg: #4D301C;
+$food-content-images-overlay-color: #FFF;
+$food-content-action-button-color: #FFF;
+$food-content-action-button-bg: #ffab6b;
+$food-content-progress-bg: #faf2f0;
+$food-content-progress-value-bg: #ff984c;
+$food-content-incorrect-info-color: #ff4737;
+
+$food-content-schedules-close-bg: #d0c5bd;
+$food-content-schedules-close-color: #FFF;
+$food-content-schedules-color: #7c706b;
+$food-content-schedules-divider-color: #ffe6dc;
+
+
+$food-content-images-ratio: 1 1;
+$food-content-review-images-ratio: 1 1;
+// Merge maps
+$pre-img-ratios: append($pre-img-ratios, $food-content-images-ratio);
+$pre-img-ratios: append($pre-img-ratios, $food-content-review-images-ratio);

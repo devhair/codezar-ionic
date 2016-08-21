@@ -1,0 +1,233 @@
+.feed-view
+{
+	background-color: $feed-bg;
+
+	.feed-header
+	{
+		background-color: $feed-header-bg !important;
+		background: $feed-header-bg !important;
+		border: none !important;
+		background-size: 0px !important; // To remove bottom border on header
+
+		.logo-container
+		{
+			width: 34%;
+			height: $bar-height - (2*$bar-padding-portrait);
+			line-height: $bar-height - (2*$bar-padding-portrait);
+			position: absolute;
+		  top: 5px;
+		  bottom: 5px;
+		  right: 33%;
+
+			.logo-image
+			{
+				width: 100%;
+				vertical-align: middle;
+			}
+		}
+
+		.buttons
+		{
+			position: absolute;
+	    top: 5px;
+	    right: 5px;
+	    bottom: 5px;
+		}
+
+		.cart-button
+		{
+			min-height: 0px;
+			height: $cart-button-height;
+			margin: (($bar-height - (2*$bar-padding-portrait)) - $cart-button-height)/2 0px;
+
+			.cart-image
+			{
+				height: 100%;
+			}
+		}
+
+		.cart-badge
+		{
+			font-size: 9px;
+			line-height: 12px;
+			padding: 0px 4px;
+			position: absolute;
+		  top: -5px;
+		  right: 0px;
+
+			@include badge-style($cart-badge-bg, $cart-badge-color);
+
+			& + .cart-image
+			{
+				margin-right: 5px;
+			}
+		}
+	}
+
+	// <ion-content>
+	.categories-feeds-content
+	{
+		& > .scroll
+		{
+			height: 100%;
+		}
+
+		.pre-transparency,
+		.post-transparency
+		{
+			width: 15%;
+			height: $sliding-categories-height;
+			position: fixed;
+			top: 0px;
+			bottom: 0px;
+			z-index: 1;
+		}
+		.pre-transparency
+		{
+			left: 0px;
+			@include linear-gradient(right, rgba($categories-default-bg, 0) 0%, $categories-default-bg 100%);
+
+			&.main-app-feed-fashion
+			{
+				@include linear-gradient(right, rgba($fashion-bg, 0) 0%, $fashion-bg 100%);
+			}
+			&.main-app-feed-food
+			{
+				@include linear-gradient(right, rgba($food-bg, 0) 0%, $food-bg 100%);
+			}
+			&.main-app-feed-travel
+			{
+				@include linear-gradient(right, rgba($travel-bg, 0) 0%, $travel-bg 100%);
+			}
+			&.main-app-feed-deals
+			{
+				@include linear-gradient(right, rgba($deals-bg, 0) 0%, $deals-bg 100%);
+			}
+			&.main-app-feed-real-state
+			{
+				@include linear-gradient(right, rgba($real-state-bg, 0) 0%, $real-state-bg 100%);
+			}
+		}
+		.post-transparency
+		{
+			right: 0px;
+			@include linear-gradient(left, rgba($categories-default-bg, 0) 0%, $categories-default-bg 100%);
+
+			&.main-app-feed-fashion
+			{
+				@include linear-gradient(left, rgba($fashion-bg, 0) 0%, $fashion-bg 100%);
+			}
+			&.main-app-feed-food
+			{
+				@include linear-gradient(left, rgba($food-bg, 0) 0%, $food-bg 100%);
+			}
+			&.main-app-feed-travel
+			{
+				@include linear-gradient(left, rgba($travel-bg, 0) 0%, $travel-bg 100%);
+			}
+			&.main-app-feed-deals
+			{
+				@include linear-gradient(left, rgba($deals-bg, 0) 0%, $deals-bg 100%);
+			}
+			&.main-app-feed-real-state
+			{
+				@include linear-gradient(left, rgba($real-state-bg, 0) 0%, $real-state-bg 100%);
+			}
+		}
+	}
+
+	// <ion-scroll>
+	.sliding-list-scroll
+	{
+		height: $sliding-categories-height;
+
+		.sliding-list-bg
+		{
+			.sliding-list
+			{
+				background-color: $categories-default-bg;
+			}
+
+			&.main-app-feed-fashion
+			{
+				.sliding-list
+				{
+					background-color: $fashion-bg;
+				}
+			}
+			&.main-app-feed-food
+			{
+				.sliding-list
+				{
+					background-color: $food-bg;
+				}
+			}
+			&.main-app-feed-travel
+			{
+				.sliding-list
+				{
+					background-color: $travel-bg;
+				}
+			}
+			&.main-app-feed-deals
+			{
+				.sliding-list
+				{
+					background-color: $deals-bg;
+				}
+			}
+			&.main-app-feed-real-state
+			{
+				.sliding-list
+				{
+					background-color: $real-state-bg;
+				}
+			}
+		}
+
+		.sliding-list
+		{
+			@include display(inline-flex);
+
+			.sliding-item
+			{
+				min-width: 100px;
+				height: $sliding-categories-height;
+				line-height: $sliding-categories-height;
+				text-align: center;
+
+				& > a
+				{
+					padding: 0px 8px;
+					display: inline-block;
+					// display: block;
+					color: #FFF;
+					text-transform: uppercase;
+					text-decoration: none;
+				}
+
+				&.active
+				{
+					font-size: 18px;
+					font-weight: 600;
+				}
+
+				&.main-app-feed-real-state
+				{
+					width: 128px;
+				}
+			}
+		}
+	}
+
+	// <ion-nav-view>
+	.category-feed
+	{
+		@include calc(height, "100% - #{($sliding-categories-height)}");
+	}
+}
+
+.feed-sub-view
+{
+
+}

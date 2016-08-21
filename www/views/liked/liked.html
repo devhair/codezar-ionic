@@ -1,0 +1,26 @@
+<ion-view class="liked-view" cache-view="false">
+  <ion-header-bar align-title="left" class="bar-positive">
+    <h1 class="title">Liked!</h1>
+  </ion-header-bar>
+  <ion-content class="padding">
+    <button class="button button-block button-positive" ui-sref="main.app.liked.new-list()">
+      Start a new list
+    </button>
+    <div class="item item-divider">
+      APRIL
+    </div>
+    <div class="card" ng-repeat="list in lists">
+      <div class="item item-text-wrap">
+        <p>Name: {{list.name}}</p>
+        <p>Category: {{list.category}}</p>
+        <p>Tags: {{list.tags}}</p>
+        <p>Creation Date: {{list.creation_date}}</p>
+        Products:
+        <span ng-repeat="product in list.products">
+          {{product.id}}
+        </span>
+        <div><a ui-sref="main.app.liked.list-details({listId: list.id})">Go to list details page</a></div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,275 @@
+.account-profile-view
+{
+	.row
+	{
+		padding: 0px;
+		margin: 0px;
+
+		.col
+		{
+			padding: 0px;
+			margin: 0px;
+		}
+	}
+
+	.user-info-row
+	{
+		padding: 5px 30px 15px;
+
+		.pre-img
+		{
+			border-radius: 50%;
+			background-color: rgba($account-divider-color, .5);
+
+			.spinner svg
+	    {
+	      position: absolute;
+	    }
+		}
+
+		.profile-image
+		{
+			border-radius: 50%;
+			width: 100%;
+		}
+
+		.user-info-col
+		{
+			padding-left: 15px;
+
+			.user-welcome
+			{
+				color: $account-color;
+				margin: 0px;
+				font-size: 20px;
+				line-height: 26px;
+				font-weight: 400;
+			}
+
+			.user-email
+			{
+				color: $account-color;
+				margin: 0px;
+				font-size: 12px;
+				line-height: 18px;
+				font-weight: 400;
+			}
+		}
+	}
+
+	.user-data-row
+	{
+		padding: 0px 30px;
+		background-color: $account-profile-data-bg;
+
+		.item.item-input
+		{
+			border: none;
+			padding: 5px 2px 10px;
+
+			.input-label
+			{
+				color: $account-profile-data-color;
+				text-transform: uppercase;
+				font-weight: 500;
+				font-size: 11px;
+				padding-top: 5px;
+			}
+
+			input
+			{
+				background-color: $account-profile-data-bg;
+				color: $account-profile-data-color;
+				padding-top: 0px;
+				padding-bottom: 0px;
+  			height: 22px;
+			}
+		}
+
+		& > .row
+		{
+			border-bottom: 1px solid $account-profile-data-border;
+
+			&:last-child
+			{
+				border: none;
+			}
+		}
+	}
+
+	.account-sub-title
+	{
+		color: $account-color;
+		padding: 20px 30px 10px;
+		text-align: left;
+		font-size: 16px;
+		font-weight: 300;
+		margin: 0px;
+	}
+
+	.address-chooser,
+	.card-chooser
+	{
+		padding: 0px 15px;
+	}
+
+	.addresses-popover-button,
+	.cards-popover-button
+	{
+		margin: 0px;
+		border-radius: 6px;
+		text-align: left;
+		padding: 0px 15px;
+
+		@include button-style($account-addresses-popover-button-bg, $account-addresses-popover-button-border, $account-addresses-popover-button-active-bg, $account-addresses-popover-button-active-border, $account-addresses-popover-button-color);
+
+		&::before
+		{
+			font-size: 20px;
+		}
+
+		// This means the popover is open
+		&.ion-chevron-up
+		{
+			border-bottom-left-radius: 0px;
+			border-bottom-right-radius: 0px;
+		}
+	}
+
+	.account-divider
+	{
+		margin: 0px;
+		padding-top: 30px;
+
+		.item-divider
+		{
+			background-color: $account-divider-color;
+			height: 20px;
+			border: none;
+			margin: 0px;
+			padding: 0px;
+			min-height: 20px;
+		}
+	}
+
+	.notifications-row
+	{
+		padding: 0px 15px;
+
+		.notifications-list
+		{
+			background-color: $account-notifications-bg;
+			padding: 0px;
+  		margin: 0px;
+			border-radius: 6px;
+
+			.item
+			{
+				border: none;
+				margin: 0px;
+				height: $account-notifications-item-height;
+			  padding-top: 0px;
+			  padding-bottom: 0px;
+			  margin: 0px 15px;
+			  padding-left: 2px;
+			  border-bottom: 1px solid $account-notifications-border;
+
+				&:first-child
+				{
+					border-top-left-radius: 6px;
+					border-top-right-radius: 6px;
+				}
+
+				&:last-child
+				{
+					border-bottom-left-radius: 6px;
+					border-bottom-right-radius: 6px;
+					border-bottom: none;
+				}
+
+				.notifications-text
+				{
+					color: $account-color;
+					font-size: 16px;
+					font-weight: 300;
+				}
+
+				.toggle
+				{
+					margin-top: -7px;
+					right: 2px;
+
+					.track
+					{
+						background-color: $account-notifications-toggle-bg;
+						border-color: $account-notifications-toggle-bg;
+
+						.handle
+						{
+							box-shadow: none;
+							background-color: $account-notifications-toggle-handle-bg;
+						}
+					}
+
+					input:checked + .track
+					{
+						background-color: $account-notifications-toggle-active-bg;
+						border-color: $account-notifications-toggle-active-bg;
+					}
+				}
+			}
+		}
+	}
+
+	.invite-and-rate-row
+	{
+		padding: 25px 30px;
+
+		.invite-friends-button
+		{
+			margin: 0px;
+			height: 36px;
+			line-height: 30px;
+			min-height: 0px;
+			border-radius: 18px;
+			font-size: 20px;
+			font-weight: 400;
+
+			@include button-style($account-invite-button-bg, $account-invite-button-border, $account-invite-button-bg, $account-invite-button-border, $account-invite-button-color);
+		}
+
+		.rate-app-button
+		{
+			margin-bottom: 0px;
+			color: $account-color;
+			font-size: 18px;
+		}
+	}
+
+	.logout-terms-row
+	{
+		padding: 15px 30px 5px;
+		background-color: $account-divider-color;
+		text-align: center;
+
+		.terms-row
+		{
+			border-bottom: 1px solid $account-legal-border;
+			height: 40px;
+			padding-bottom: 10px;
+		}
+
+		.logout-button
+		{
+			color: $account-color;
+		}
+
+		.legal-stuff-button
+		{
+			font-size: 12px;
+			color: $account-color;
+			padding: 0px;
+		}
+	}
+
+}

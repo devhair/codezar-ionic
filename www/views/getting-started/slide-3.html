@@ -1,0 +1,58 @@
+<div class="row question-row">
+  <div class="col">
+    <h2 class="question-title">Pick categories to follow</h2>
+    <p class="question-paragraph">You can add or change them later</p>
+    <ion-scroll class="question-options-outer" direction="y">
+      <ion-list class="question-options">
+        <custom-checkbox ng-model="pick_categories.tops" title="Tops">
+          <div class="category-item-wrapper">
+            <div class="category-item-content" ng-init="bg_img = './img/sample-images/getting-started/category1-1.1.png'">
+              <div multi-bg="[bg_img]" interval="3000" helper-class="category-with-image">
+              </div>
+            </div>
+          </div>
+        </custom-checkbox>
+        <custom-checkbox title="Dresses" ng-model="pick_categories.dresses">
+          <div class="category-item-wrapper">
+            <div class="category-item-content" ng-init="bg_img = './img/sample-images/getting-started/category2-1.1.png'">
+              <div multi-bg="[bg_img]" interval="3000" helper-class="category-with-image">
+              </div>
+            </div>
+          </div>
+        </custom-checkbox>
+        <custom-checkbox title="Jeans" ng-model="pick_categories.jeans">
+          <div class="category-item-wrapper">
+            <div class="category-item-content" ng-init="bg_img = './img/sample-images/getting-started/category3-1.1.png'">
+              <div multi-bg="[bg_img]" interval="3000" helper-class="category-with-image">
+              </div>
+            </div>
+          </div>
+        </custom-checkbox>
+        <custom-checkbox title="Jackets" ng-model="pick_categories.jackets">
+          <div class="category-item-wrapper">
+            <div class="category-item-content" ng-init="bg_img = './img/sample-images/getting-started/category4-1.1.png'">
+              <div multi-bg="[bg_img]" interval="3000" helper-class="category-with-image">
+              </div>
+            </div>
+          </div>
+        </custom-checkbox>
+        <custom-checkbox title="Shoes" ng-model="pick_categories.shoes">
+          <div class="category-item-wrapper">
+            <div class="category-item-content" ng-init="bg_img = './img/sample-images/getting-started/category5-1.1.png'">
+              <div multi-bg="[bg_img]" interval="3000" helper-class="category-with-image">
+              </div>
+            </div>
+          </div>
+        </custom-checkbox>
+        <custom-checkbox title="Glasses" ng-model="pick_categories.glasses">
+          <div class="category-item-wrapper">
+            <div class="category-item-content" ng-init="bg_img = './img/sample-images/getting-started/category6-1.1.png'">
+              <div multi-bg="[bg_img]" interval="3000" helper-class="category-with-image">
+              </div>
+            </div>
+          </div>
+        </custom-checkbox>
+      </ion-list>
+    </ion-scroll>
+  </div>
+</div>

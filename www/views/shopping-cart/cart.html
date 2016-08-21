@@ -1,0 +1,115 @@
+<ion-view class="shopping-cart-view" cache-view="false">
+  <ion-header-bar class="shopping-cart-header">
+    <div class="buttons">
+      <button class="button button-clear close-button" ng-click="close()">Close</button>
+    </div>
+    <h1 class="title">Shopping Cart</h1>
+    <div class="buttons">
+      <button class="button button-clear checkout-button" ui-sref="main.app.checkout()" ng-show="products.length > 0">Checkout</button>
+    </div>
+  </ion-header-bar>
+  <ion-content class="shopping-cart-content" has-bouncing="false">
+    <div class="row row-center empty-cart-row" ng-if="products.length == 0">
+      <div class="col">
+        <h3 class="no-products-title">I feel so empty</h3>
+        <div class="illustration-container">
+          <pre-img ratio="_34_25">
+            <img class="illustration-image" ng-src="./img/shopping-cart/cart-empty.png" spinner-on-load/>
+          </pre-img>
+        </div>
+      </div>
+    </div>
+    <div ng-if="products.length > 0">
+      <ul class="list shopping-bill">
+        <li class="item">
+          <div class="row">
+            <div class="col">
+              <span class="bill-item-title">Price Subtotal</span>
+            </div>
+            <div class="col">
+              <span class="bill-item-value">$ {{ getSubtotal() | number:2 }}</span>
+            </div>
+          </div>
+        </li>
+        <li class="item">
+          <div class="row">
+            <div class="col">
+              <span class="bill-item-title">Estimated Taxes</span>
+            </div>
+            <div class="col">
+              <span class="bill-item-value">$ {{ getTax() | number:2 }}</span>
+            </div>
+          </div>
+        </li>
+        <li class="item">
+          <div class="row">
+            <div class="col">
+              <span class="bill-item-title">Shipping</span>
+            </div>
+            <div class="col">
+              <span class="bill-item-value">FREE</span>
+            </div>
+          </div>
+        </li>
+        <li class="item bill-total">
+          <div class="row">
+            <div class="col">
+              <span class="bill-item-title">Order Total</span>
+            </div>
+            <div class="col">
+              <span class="bill-item-value">$ {{ getTotal() | number:2 }}</span>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <div class="item item-divider shopping-cart-divider">
+        {{ products.length }} {{ products.length === 1 ? 'item' : 'items' }} in cart
+      </div>
+      <div class="products-in-cart-row">
+        <div class="card product-in-cart" ng-repeat="product in products">
+          <div class="item item-divider product-header">
+            <div class="row">
+              <div class="col col-center">
+                <span class="product-name">{{product.name}}</span>
+              </div>
+              <div class="col col-center">
+                <button class="button button-icon icon ion-close-round remove-button" ng-click="removeFromCart(product)"></button>
+              </div>
+            </div>
+          </div>
+          <div class="item item-text-wrap product-content">
+            <div class="row">
+              <div class="col col-33 product-image-col">
+                <div class="product-image-container" multi-bg="[product.square_image]"></div>
+              </div>
+              <div class="col col-center product-description-col">
+                <span class="description-line">Style: <b>{{product.style}}</b></span>
+                <span class="description-line">Color: <b>{{product.color}}</b></span>
+                <span class="description-line">Size: <b>{{product.size}}</b></span>
+                <div class="row">
+                  <div class="col col-50">
+                    <span class="description-line">Quantity: <b class="product-quantity">{{product.qty}}</b></span>
+                  </div>
+                  <div class="col quantity-input-col">
+                    <number-input ng-model="product.qty"></number-input>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="item item-divider product-footer">
+            <div class="row">
+              <div class="col">
+                <span class="shipping-text">Standard Shipping</span>
+                <span class="shipping-text">Delivery between 2 and 3 days</span>
+              </div>
+              <div class="col col-center">
+                <span class="order-total">${{product.price * product.qty | number:2}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
